@@ -52,7 +52,7 @@ msgstr ""
 msgid "credits.contributors"
 msgstr ""
 "Please have a look at the "
-"[contributors list on GitHub](https://github.com/engelsystem/engelsystem/graphs/contributors)"
+"[contributors list on GitHub](https://github.com/florianisystem/florianisystem/graphs/contributors)"
 " for a complete list."
 
 msgid "form.load_schedule"

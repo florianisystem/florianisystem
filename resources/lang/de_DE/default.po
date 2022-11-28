@@ -150,7 +150,7 @@ msgstr ""
 msgid "credits.contributors"
 msgstr ""
 "Eine vollständige Liste der Mitwirkenden findest Du [auf GitHub](https://"
-"github.com/engelsystem/engelsystem/graphs/contributors)."
+"github.com/florianisystem/florianisystem/graphs/contributors)."
 
 #: resources/views/pages/login.twig:10 includes/view/EventConfig_view.php:27
 #, python-format, php-format
