@@ -93,7 +93,7 @@ msgid "oauth.provider-error"
 msgstr "Login-Provider-Fehler"
 
 msgid "oauth.already-connected"
-msgstr "Dieser Account wurde bereits mit einem anderen Engelsystem-User verbunden!"
+msgstr "Dieser Account wurde bereits mit einem anderen Florianisystem-User verbunden!"
 
 msgid "oauth.connected"
 msgstr "Login-Provider verbunden!"

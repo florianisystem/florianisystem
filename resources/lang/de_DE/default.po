@@ -141,7 +141,7 @@ msgstr ""
 #: resources/views/pages/credits.twig:20
 msgid "credits.credit"
 msgstr ""
-"Das ursprüngliche Engelsystem wurde entwickelt von [cookie](https://github."
+"Das ursprüngliche Florianisystem wurde entwickelt von [cookie](https://github."
 "com/cookieBerlin/engelsystem). Danach wurde es von [msquare](https://"
 "notrademark.de) (Maintainer) und [MyIgel](https://myigel.name) völlig "
 "überarbeitet und verbessert."
