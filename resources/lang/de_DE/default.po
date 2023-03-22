@@ -437,7 +437,7 @@ msgid ""
 "supporter or heaven to do so."
 msgstr ""
 "Du darfst diesen Schichteintrag nicht entfernen. Falls notwendig, frage "
-"deinen Supporter oder im Himmel danach."
+"deinen Supporter oder im Support danach."
 
 #: includes/controller/shift_entries_controller.php:354
 msgid "Shift entry removed."
@@ -880,7 +880,7 @@ msgid ""
 "account deletion, please contact heaven."
 msgstr ""
 "Dein %s-Konto wurde gelöscht. Wenn Du dazu Fragen hast, kontaktiere bitte "
-"den Himmel."
+"den Support."
 
 #: includes/model/UserWorkLog_model.php:167
 #: includes/model/UserWorkLog_model.php:168 includes/view/User_view.php:200
@@ -1604,7 +1604,7 @@ msgstr "Benachrichtige mich bei neuen News"
 
 #: includes/pages/guest_login.php:291 includes/view/User_view.php:73
 msgid "Allow heaven angels to contact you by e-mail."
-msgstr "Erlaube Himmel-Helfer dich per Mail zu kontaktieren."
+msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 
 msgid ""
 "To receive vouchers, give consent that nick, email address, worked hours and shirt size "
@@ -1753,7 +1753,7 @@ msgstr "Treffen"
 #: includes/pages/user_questions.php:11 includes/sys_menu.php:98
 #: includes/view/Questions_view.php:40
 msgid "Ask the Heaven"
-msgstr "Frag den Himmel"
+msgstr "Frag den Support"
 
 #: includes/pages/user_questions.php:55
 msgid "You question was saved."
@@ -2658,14 +2658,14 @@ msgid ""
 "heavens desk to be unlocked again."
 msgstr ""
 "Du hast mindestens %s Schichten geschwänzt. Schicht-Registrierung ist "
-"gesperrt. Bitte gehe zum Himmelsschreibtisch um wieder entsperrt zu werden."
+"gesperrt. Bitte gehe zum Supporterschreibtisch um wieder entsperrt zu werden."
 
 #: includes/view/User_view.php:886
 msgid ""
 "You are not marked as arrived. Please go to heaven's desk, get your angel "
 "badge and/or tell them that you arrived already."
 msgstr ""
-"Du bist nicht als angekommen markiert. Bitte gehe zur Himmelsverwaltung, "
+"Du bist nicht als angekommen markiert. Bitte gehe zur Supportverwaltung, "
 "hole Dein Badge ab und/oder erkläre ihnen, dass Du bereits angekommen bist."
 
 #: includes/view/User_view.php:899
@@ -3003,7 +3003,7 @@ msgid "settings.profile.email_messages"
 msgstr "Benachrichtige mich bei neuen privaten Nachrichten."
 
 msgid "settings.profile.email_by_human_allowed"
-msgstr "Erlaube Himmel-Helfer dich per Mail zu kontaktieren."
+msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 
 msgid "settings.profile.email_goody"
 msgstr "Um Voucher zu erhalten, stimme zu, dass Nick, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
@@ -3076,7 +3076,7 @@ msgid "faq.faq"
 msgstr "FAQ"
 
 msgid "faq.questions_link"
-msgstr "Wenn deine Frage hier nicht beantwortet wurde, <a href=\"%s\">frag den Himmel</a>."
+msgstr "Wenn deine Frage hier nicht beantwortet wurde, <a href=\"%s\">frag den Support</a>."
 
 msgid "faq.edit"
 msgstr "FAQ Eintrag bearbeiten"
