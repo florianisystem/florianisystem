@@ -247,7 +247,7 @@ return [
     // Available locales in /resources/lang/
     'locales'                 => [
         'de_DE' => 'Deutsch',
-        'en_US' => 'English',
+        // 'en_US' => 'English',
     ],
 
     // The default locale to use
