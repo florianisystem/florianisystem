@@ -67,8 +67,8 @@ msgid "Authentication expired"
 msgstr "Autorisierung ist abgelaufen"
 
 #: resources/views/errors/419.twig:6
-msgid "The provided CSRF token is invalid or has expired"
-msgstr "Das angegebene CSRF Token ist ungültig oder abgelaufen"
+msgid "The provided CSRF token is invalid or has expired. Please try again."
+msgstr "Das angegebene CSRF Token ist ungültig oder abgelaufen. Bitte nochmals versuchen."
 
 #: resources/views/layouts/parts/footer.twig:9
 #: resources/views/layouts/parts/footer.twig:10
