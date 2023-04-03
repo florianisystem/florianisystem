@@ -142,6 +142,11 @@ return [
             'type' => 'dark',
             'navbar_classes' => 'navbar-dark bg-black border-dark',
         ],
+        19 => [
+            'name' => 'Florianisystem',
+            'type' => 'light',
+            'navbar_classes' => 'navbar-light bg-light',
+        ]
     ],
 
     // Redirect to this site after logging in or when pressing the top-left button

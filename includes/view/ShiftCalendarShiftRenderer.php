@@ -74,7 +74,7 @@ class ShiftCalendarShiftRenderer
     {
         return match ($shiftSignupState->getState()) {
             ShiftSignupStatus::ADMIN, ShiftSignupStatus::OCCUPIED => 'success',
-            ShiftSignupStatus::SIGNED_UP => 'primary',
+            ShiftSignupStatus::SIGNED_UP => 'info',
             ShiftSignupStatus::NOT_ARRIVED, ShiftSignupStatus::NOT_YET, ShiftSignupStatus::SHIFT_ENDED => 'secondary',
             ShiftSignupStatus::ANGELTYPE, ShiftSignupStatus::COLLIDES => 'warning',
             ShiftSignupStatus::FREE => 'danger',
