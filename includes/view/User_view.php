@@ -535,7 +535,7 @@ function User_view(
     }
 
     return page_with_title(
-        '<span class="icon-icon_angel"></span> '
+        '<span class="bi bi-person-fill"></span> '
         . (
         (config('enable_pronoun') && $user_source->personalData->pronoun)
             ? '<small>' . htmlspecialchars($user_source->personalData->pronoun) . '</small> '
@@ -850,7 +850,7 @@ function User_Nick_render($user, $plain = false)
     }
 
     return render_profile_link(
-        '<span class="icon-icon_angel"></span> ' . htmlspecialchars($user->displayName) . '</a>',
+        '<span class="bi bi-person-fill"></span> ' . htmlspecialchars($user->displayName) . '</a>',
         $user->id,
         ($user->state->arrived ? '' : 'text-muted')
     );
