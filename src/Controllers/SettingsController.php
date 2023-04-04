@@ -241,20 +241,20 @@ class SettingsController extends BaseController
     public function settingsMenu(): array
     {
         $menu = [
-            url('/settings/profile')  => 'settings.profile',
-            url('/settings/password') => 'settings.password',
+            '/settings/profile'  => 'settings.profile',
+            '/settings/password' => 'settings.password',
         ];
 
         if (count(config('locales')) > 1) {
-            $menu[url('/settings/language')] = 'settings.language';
+            $menu['/settings/language'] = 'settings.language';
         }
 
         if (count(config('themes')) > 1) {
-            $menu[url('/settings/theme')] = 'settings.theme';
+            $menu['/settings/theme'] = 'settings.theme';
         }
 
         if (!empty(config('oauth'))) {
-            $menu[url('/settings/oauth')] = ['title' => 'settings.oauth', 'hidden' => $this->checkOauthHidden()];
+            $menu['/settings/oauth'] = ['title' => 'settings.oauth', 'hidden' => $this->checkOauthHidden()];
         }
 
         return $menu;
