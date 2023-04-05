@@ -93,7 +93,7 @@ function make_navigation()
         'admin_shifts'       => 'Create shifts',
         'admin/rooms'        => ['room.rooms', 'admin_rooms'],
         'admin_groups'       => 'Grouprights',
-        'admin/schedule'     => ['schedule.import', 'schedule.import'],
+        // 'admin/schedule'     => ['schedule.import', 'schedule.import'],
         'admin/logs'         => ['log.log', 'admin_log'],
         'admin_event_config' => 'Event config',
     ];
