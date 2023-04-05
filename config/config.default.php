@@ -260,17 +260,18 @@ return [
 
     // Available T-Shirt sizes, set value to null if not available
     'tshirt_sizes'            => [
-        'S'    => 'Small Straight-Cut',
-        'S-G'  => 'Small Fitted-Cut',
-        'M'    => 'Medium Straight-Cut',
-        'M-G'  => 'Medium Fitted-Cut',
-        'L'    => 'Large Straight-Cut',
-        'L-G'  => 'Large Fitted-Cut',
-        'XL'   => 'XLarge Straight-Cut',
-        'XL-G' => 'XLarge Fitted-Cut',
-        '2XL'  => '2XLarge Straight-Cut',
-        '3XL'  => '3XLarge Straight-Cut',
-        '4XL'  => '4XLarge Straight-Cut',
+        'M-S'    => 'Herr Small',
+        'M-M'    => 'Herr Medium',
+        'M-L'    => 'Herr Large',
+        'M-XL'   => 'Herr X-Large',
+        'M-XXL'  => 'Herr XX-Large',
+        'M-XXXL' => 'Herr XXX-Large',
+        'W-S'    => 'Damen Small',
+        'W-M'    => 'Damen Medium',
+        'W-L'    => 'Damen Large',
+        'W-XL'   => 'Damen X-Large',
+        'W-XXL'  => 'Damen XX-Large',
+        'W-XXXL' => 'Damen XXX-Large',
     ],
 
     'metrics'                 => [
