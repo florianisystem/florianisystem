@@ -43,6 +43,7 @@ if [[ -n "${RUN_USER}" ]]; then
   echo "Running as $user:$group"
 fi
 
+bin/migrate
 
 nginx -g 'daemon off;'&
 exec "$@"
