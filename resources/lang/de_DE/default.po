@@ -265,18 +265,18 @@ msgstr "Wiederherstellen"
 #: includes/view/AngelTypes_view.php:81 includes/view/AngelTypes_view.php:139
 #: includes/view/User_view.php:779
 msgid "Angeltypes"
-msgstr "Helfertypen"
+msgstr "Aufgabenbereiche"
 
 #: includes/controller/angeltypes_controller.php:89
 #, php-format
 msgid "Angeltype %s deleted."
-msgstr "Helfertyp %s gelöscht."
+msgstr "Aufgabenbereich %s gelöscht."
 
 #: includes/controller/angeltypes_controller.php:94
 #: includes/view/AngelTypes_view.php:59
 #, php-format
 msgid "Delete angeltype %s"
-msgstr "Lösche Helfertyp %s"
+msgstr "Lösche Aufgabenbereich %s"
 
 #: includes/controller/angeltypes_controller.php:135
 msgid "Please check the name. Maybe it already exists."
@@ -292,7 +292,7 @@ msgstr "%s bearbeiten"
 #: includes/view/AngelTypes_view.php:346
 #, php-format
 msgid "Team %s"
-msgstr "Team %s"
+msgstr "Aufgabenbereich %s"
 
 #: includes/controller/angeltypes_controller.php:287
 #: includes/view/User_view.php:397
@@ -335,7 +335,7 @@ msgstr "mitmachen"
 
 #: includes/controller/angeltypes_controller.php:354
 msgid "Angeltype doesn't exist . "
-msgstr "Helfertyp existiert nicht."
+msgstr "Aufgabenbereich existiert nicht."
 
 #: includes/controller/event_config_controller.php:11 includes/sys_menu.php:122
 msgid "Event config"
@@ -390,7 +390,7 @@ msgstr "%s wurde in die Schicht eingetragen."
 
 #: includes/controller/shift_entries_controller.php:149
 msgid "User is not in angeltype."
-msgstr "User ist nicht im Helfertyp."
+msgstr "User ist nicht im Aufgabenbereich."
 
 #: includes/controller/shift_entries_controller.php:166
 #: includes/controller/shift_entries_controller.php:210
@@ -399,7 +399,7 @@ msgstr "Die Schicht ist schon voll."
 
 #: includes/controller/shift_entries_controller.php:206
 msgid "You need be accepted member of the angeltype."
-msgstr "Du musst bestätigtes Mitglied des Helfertyps sein."
+msgstr "Du musst bestätigtes Mitglied des Aufgabenbereichs sein."
 
 #: includes/controller/shift_entries_controller.php:208
 #: includes/view/Shifts_view.php:138
@@ -573,12 +573,12 @@ msgstr "Schichttypen"
 #, php-format
 msgid "There is %d unconfirmed angeltype."
 msgid_plural "There are %d unconfirmed angeltypes."
-msgstr[0] "Es gibt %d nicht freigeschalteten Helfertypen!"
-msgstr[1] "Es gibt %d nicht freigeschaltete Helfertypen!"
+msgstr[0] "Es gibt %d nicht freigeschalteten Aufgabenbereiche!"
+msgstr[1] "Es gibt %d nicht freigeschaltete Aufgabenbereiche!"
 
 #: includes/controller/user_angeltypes_controller.php:33
 msgid "Angel types which need approvals:"
-msgstr "Helfertypen die bestätigt werden müssen:"
+msgstr "Aufgabenbereiche die bestätigt werden müssen:"
 
 #: includes/controller/user_angeltypes_controller.php:47
 #: includes/controller/user_angeltypes_controller.php:53
@@ -588,16 +588,16 @@ msgstr "Helfertypen die bestätigt werden müssen:"
 #: includes/controller/user_angeltypes_controller.php:199
 #: includes/controller/user_angeltypes_controller.php:264
 msgid "Angeltype doesn't exist."
-msgstr "Helfertyp existiert nicht."
+msgstr "Aufgabenbereich existiert nicht."
 
 #: includes/controller/user_angeltypes_controller.php:58
 msgid "You are not allowed to delete all users for this angeltype."
-msgstr "Du darfst nicht alle Benutzer von diesem Helfertyp entfernen."
+msgstr "Du darfst nicht alle Benutzer von diesem Aufgabenbereich entfernen."
 
 #: includes/controller/user_angeltypes_controller.php:66
 #, php-format
 msgid "Denied all users for angeltype %s."
-msgstr "Alle Benutzer mit Helfertyp %s abgelehnt."
+msgstr "Alle Benutzer mit Aufgabenbereich %s abgelehnt."
 
 #: includes/controller/user_angeltypes_controller.php:71
 #: includes/view/UserAngelTypes_view.php:45
@@ -606,12 +606,12 @@ msgstr "Alle Benutzer ablehnen"
 
 #: includes/controller/user_angeltypes_controller.php:98
 msgid "You are not allowed to confirm all users for this angeltype."
-msgstr "Du darfst nicht alle Benutzer für diesen Helfertyp freischalten."
+msgstr "Du darfst nicht alle Benutzer für diesen Aufgabenbereich freischalten."
 
 #: includes/controller/user_angeltypes_controller.php:106
 #, php-format
 msgid "Confirmed all users for angeltype %s."
-msgstr "Alle Benutzer für Helfertyp %s freigeschaltet."
+msgstr "Alle Benutzer für Aufgabenbereich %s freigeschaltet."
 
 #: includes/controller/user_angeltypes_controller.php:111
 #: includes/view/UserAngelTypes_view.php:69
@@ -625,11 +625,11 @@ msgstr "Alle Benutzer bestätigen"
 #: includes/controller/user_angeltypes_controller.php:245
 #: includes/controller/user_angeltypes_controller.php:258
 msgid "User angeltype doesn't exist."
-msgstr "Benutzer-Helfertyp existiert nicht."
+msgstr "Benutzer-Aufgabenbereich existiert nicht."
 
 #: includes/controller/user_angeltypes_controller.php:144
 msgid "You are not allowed to confirm this users angeltype."
-msgstr "Du darfst diesen Benutzer nicht für diesen Helfertyp freischalten."
+msgstr "Du darfst diesen Benutzer nicht für diesen Aufgabenbereich freischalten."
 
 #: includes/controller/user_angeltypes_controller.php:150
 #: includes/controller/user_angeltypes_controller.php:205
@@ -641,16 +641,16 @@ msgstr "Benutzer existiert nicht."
 #: includes/controller/user_angeltypes_controller.php:163
 #, php-format
 msgid "%s confirmed for angeltype %s."
-msgstr "%s für Helfertyp %s freigeschaltet."
+msgstr "%s für Aufgabenbereich %s freigeschaltet."
 
 #: includes/controller/user_angeltypes_controller.php:171
 #: includes/view/UserAngelTypes_view.php:89
 msgid "Confirm angeltype for user"
-msgstr "Helfertyp für Benutzer bestätigen"
+msgstr "Aufgabenbereich für Benutzer bestätigen"
 
 #: includes/controller/user_angeltypes_controller.php:210
 msgid "You are not allowed to delete this users angeltype."
-msgstr "Du darfst diesen Benutzer nicht von diesem Helfertyp entfernen."
+msgstr "Du darfst diesen Benutzer nicht von diesem Aufgabenbereich entfernen."
 
 #: includes/controller/user_angeltypes_controller.php:218
 #, php-format
@@ -660,7 +660,7 @@ msgstr "Benutzer %s von %s entfernt."
 #: includes/controller/user_angeltypes_controller.php:224
 #: includes/view/UserAngelTypes_view.php:113
 msgid "Remove angeltype"
-msgstr "Helfertyp löschen"
+msgstr "Aufgabenbereich löschen"
 
 #: includes/controller/user_angeltypes_controller.php:240
 msgid "You are not allowed to set supporter rights."
@@ -700,7 +700,7 @@ msgstr "Benutzer %s zu %s hinzugefügt."
 #: includes/controller/user_angeltypes_controller.php:351
 #: includes/view/UserAngelTypes_view.php:142
 msgid "Add user to angeltype"
-msgstr "Benutzer zu Helfertyp hinzufügen"
+msgstr "Benutzer zu Aufgabenbereich hinzufügen"
 
 #: includes/controller/user_angeltypes_controller.php:368
 #, php-format
@@ -724,7 +724,7 @@ msgid ""
 "You joined an angeltype which requires a driving license. Please edit your "
 "driving license information here: %s."
 msgstr ""
-"Du bist einem Helfertypen beigetreten, der Führerschein-Infos benötigt. Bitte "
+"Du bist einem Aufgabenbereiche beigetreten, der Führerschein-Infos benötigt. Bitte "
 "trage Deine Führerschein-Infos hier ein: %s."
 
 #: includes/controller/user_driver_licenses_controller.php:27
@@ -1106,7 +1106,7 @@ msgstr "All"
 #: includes/view/ShiftTypes_view.php:61
 #: includes/view/UserAngelTypes_view.php:152
 msgid "Angeltype"
-msgstr "Helfertyp"
+msgstr "Aufgabenbereich"
 
 #: includes/pages/admin_free.php:112 includes/pages/guest_login.php:275
 #: includes/view/AngelTypes_view.php:298 includes/view/AngelTypes_view.php:311
@@ -1433,7 +1433,7 @@ msgstr "Bitte einen Modus auswählen."
 #: includes/pages/admin_shifts.php:150
 #, php-format
 msgid "Please check the needed angels for team %s."
-msgstr "Bitte gib die Anzahl der benötigten Helfer vom Team %s an."
+msgstr "Bitte gib die Anzahl der benötigten Helfer vom Aufgabenbereich %s an."
 
 #: includes/pages/admin_shifts.php:156
 msgid "There are 0 angels needed. Please enter the amounts of needed angels."
@@ -1521,7 +1521,7 @@ msgid ""
 "Please visit the angeltypes page or the users profile to manage users "
 "angeltypes."
 msgstr ""
-"Bitte benutze die Helfertypen-Seite um die Helfertypen des Users zu verwalten."
+"Bitte benutze die Aufgabenbereiche-Seite um die Aufgabenbereiche des Users zu verwalten."
 
 #: includes/pages/admin_user.php:314
 msgid "Edit user"
@@ -1636,7 +1636,7 @@ msgid ""
 "Some angel types have to be confirmed later by a supporter at an "
 "introduction meeting. You can change your selection in the options section."
 msgstr ""
-"Helfertypen welche eine Einführung benötigen, werden bei einem Einführungstreffen von "
+"Aufgabenbereiche welche eine Einführung benötigen, werden bei einem Einführungstreffen von "
 "einem Supporter freigeschaltet. Du kannst Deine Auswahl später in den Einstellungen ändern."
 
 #: includes/pages/guest_login.php:339 includes/view/User_view.php:61
@@ -1802,8 +1802,8 @@ msgid ""
 "The administration has not configured any angeltypes yet - or you are not "
 "subscribed to any angeltype."
 msgstr ""
-"Die Administratoren haben noch keine Helfertypen konfiguriert - oder Du hast "
-"noch keine Helfertypen ausgewählt."
+"Die Administratoren haben noch keine Aufgabenbereiche konfiguriert - oder Du hast "
+"noch keine Aufgabenbereiche ausgewählt."
 
 #: includes/pages/user_shifts.php:204
 msgid "occupied"
@@ -1826,7 +1826,7 @@ msgid ""
 "The tasks shown here are influenced by the angeltypes you joined already!"
 msgstr ""
 "Die Schichten, die hier angezeigt werden, sind von Deinen Einstellungen "
-"(Helfertypen/Aufgaben) abhängig!"
+"(Aufgabenbereiche/Aufgaben) abhängig!"
 
 #: includes/pages/user_shifts.php:263
 msgid "Description of the jobs."
@@ -1922,7 +1922,7 @@ msgstr "Mitglied"
 #: includes/view/AngelTypes_view.php:60
 #, php-format
 msgid "Do you want to delete angeltype %s?"
-msgstr "Möchtest Du den Helfertypen %s löschen?"
+msgstr "Möchtest Du den Aufgabenbereiche %s löschen?"
 
 #: includes/view/AngelTypes_view.php:63 includes/view/ShiftEntry_view.php:27
 #: includes/view/ShiftEntry_view.php:56 includes/view/ShiftTypes_view.php:25
@@ -1945,7 +1945,7 @@ msgid ""
 "Angel types which require introduction can only be used by an angel if "
 "enabled by a supporter (double opt-in)."
 msgstr ""
-"Helfertypen, welche eine Einführung benötigen, müssen von einem Supporter freigeschaltet werden "
+"Aufgabenbereiche, welche eine Einführung benötigen, müssen von einem Supporter freigeschaltet werden "
 "(double-opt-in)."
 
 #: includes/view/AngelTypes_view.php:96 includes/view/AngelTypes_view.php:97
@@ -1977,7 +1977,7 @@ msgid ""
 "This angeltype requires a driver license. Please enter your driver license "
 "information!"
 msgstr ""
-"Dieser Helfertyp benötigt Führerschein-Infos. Bitte trage Deine Führerschein-"
+"Dieser Aufgabenbereich benötigt Führerschein-Infos. Bitte trage Deine Führerschein-"
 "Infos ein!"
 
 #: includes/view/AngelTypes_view.php:162
@@ -1986,7 +1986,7 @@ msgid ""
 "You are unconfirmed for this angeltype. Please go to the introduction for %s "
 "to get confirmed."
 msgstr ""
-"Du bist noch nicht für diesen Helfertyp bestätigt. Bitte gehe zur Einführung "
+"Du bist noch nicht für diesen Aufgabenbereich bestätigt. Bitte gehe zur Einführung "
 "für %s um bestätigt zu werden."
 
 #: includes/view/AngelTypes_view.php:224
@@ -2058,7 +2058,7 @@ msgstr "Alle ablehnen"
 
 #: includes/view/AngelTypes_view.php:499
 msgid "New angeltype"
-msgstr "Neuer Helfertyp"
+msgstr "Neuer Aufgabenbereich"
 
 #: includes/view/AngelTypes_view.php:506
 msgid "Self Sign Up Allowed"
@@ -2156,7 +2156,7 @@ msgstr "Hilfe benötigt"
 
 #: includes/view/ShiftCalendarRenderer.php:314
 msgid "Other angeltype needed / collides with my shifts"
-msgstr "Andere Helfertypen benötigt / kollidiert mit meinen Schichten"
+msgstr "Andere Aufgabenbereiche benötigt / kollidiert mit meinen Schichten"
 
 #: includes/view/ShiftCalendarRenderer.php:315
 msgid "Shift is full"
@@ -2298,7 +2298,7 @@ msgstr "Schichttyp erstellen"
 #: includes/view/ShiftTypes_view.php:79
 #, php-format
 msgid "for team %s"
-msgstr "für Team %s"
+msgstr "für Aufgabenbereich %s"
 
 #: includes/view/ShiftTypes_view.php:137
 msgid "New shifttype"
@@ -2442,7 +2442,7 @@ msgstr "Geplanter Abreisetag"
 
 #: includes/view/User_view.php:83
 msgid "You can manage your Angeltypes <a href=\"%s\">on the Angeltypes page</a>."
-msgstr "Du kannst deine Helfertypen <a href=\"%s\">auf der Helfertypen-Seite</a> verwalten."
+msgstr "Du kannst deine Aufgabenbereiche <a href=\"%s\">auf der Aufgabenbereiche-Seite</a> verwalten."
 
 #: includes/view/User_view.php:124
 msgid ""
@@ -2701,7 +2701,7 @@ msgstr ""
 "bedeutet dies, dass der Helfer bereits sein T-Shirt erhalten hat."
 
 msgid "Please visit the angeltypes page or the users profile to manage the users angeltypes."
-msgstr "Bitte besuche die Seite Helfertypen oder das Benutzerprofil, um die Helfertypen des Benutzers zu verwalten."
+msgstr "Bitte besuche die Seite Aufgabenbereiche oder das Benutzerprofil, um die Aufgabenbereiche des Benutzers zu verwalten."
 
 msgid "Here you can reset the password of this angel:"
 msgstr "Hier kannst du das Passwort für diesen Helfer zurücksetzen:"
@@ -3016,7 +3016,7 @@ msgid "settings.profile.shirt_size"
 msgstr "T-Shirt-Größe"
 
 msgid "settings.profile.angeltypes.info"
-msgstr "Du kannst deine Helfertypen <a href=\"%s\">auf der Helfertypen-Seite</a> verwalten."
+msgstr "Du kannst deine Aufgabenbereiche <a href=\"%s\">auf der Aufgabenbereiche-Seite</a> verwalten."
 
 msgid "settings.password"
 msgstr "Passwort"
@@ -3175,16 +3175,16 @@ msgid "worklog.delete.info"
 msgstr "Möchtest du den Arbeitseinsatz von %s wirklich löschen?"
 
 msgid "angeltypes.angeltypes"
-msgstr "Helfertypen"
+msgstr "Aufgabenbereiche"
 
 msgid "angeltypes.about"
-msgstr "Teams-/Aufgabenbeschreibung"
+msgstr "Aufgabenbereiche & Beschreibungen"
 
 msgid "angeltypes.about.text"
-msgstr "Hier findest Du die Liste der Teams und ihrer Aufgaben. Wenn Du weitere Fragen hast, schaue in den FAQ nach."
+msgstr "Hier findest Du die Liste der Aufgabenbereiche. Wenn Du weitere Fragen hast, schaue in den FAQ nach."
 
 msgid "angeltypes.restricted.hint"
-msgstr "Dieser Helfertyp benötigt eine Einweisung bei einem Einführungstreffen. "
+msgstr "Dieser Aufgabenbereich benötigt eine Einweisung bei einem Einführungstreffen. "
 "Weitere Informationen findest du möglicherweise in der Beschreibung."
 
 msgid "angeltypes.name"
