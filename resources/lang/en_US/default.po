@@ -305,6 +305,15 @@ msgstr "Password confirmation"
 msgid "settings.password.success"
 msgstr "Password was changed successfully."
 
+msgid "settings.organization"
+msgstr "Organization"
+
+msgid "settings.organization.info"
+msgstr "Here you can change your organization."
+
+msgid "settings.organization.success"
+msgstr "Organization was changed successfully."
+
 msgid "settings.theme"
 msgstr "Theme"
 
