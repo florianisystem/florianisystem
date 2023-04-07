@@ -267,6 +267,9 @@ msgstr "Wiederherstellen"
 msgid "Angeltypes"
 msgstr "Aufgabenbereiche"
 
+msgid "Add Angeltype"
+msgstr "Aufgabenbereich hinzufügen"
+
 #: includes/controller/angeltypes_controller.php:89
 #, php-format
 msgid "Angeltype %s deleted."
