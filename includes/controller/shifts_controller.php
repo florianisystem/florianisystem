@@ -1,5 +1,6 @@
 <?php
 
+use Engelsystem\Helpers\Carbon;
 use Engelsystem\Models\AngelType;
 use Engelsystem\Models\Shifts\NeededAngelType;
 use Engelsystem\Models\Room;
@@ -112,14 +113,14 @@ function shift_edit_controller()
             error(__('Please select a shifttype.'));
         }
 
-        if ($request->has('start') && $tmp = DateTime::createFromFormat('Y-m-d H:i', $request->input('start'))) {
+        if ($request->has('start') && $tmp = Carbon::createFromDateTime($request->input('start'))) {
             $start = $tmp;
         } else {
             $valid = false;
             error(__('Please enter a valid starting time for the shifts.'));
         }
 
-        if ($request->has('end') && $tmp = DateTime::createFromFormat('Y-m-d H:i', $request->input('end'))) {
+        if ($request->has('end') && $tmp = Carbon::createFromDateTime($request->input('end'))) {
             $end = $tmp;
         } else {
             $valid = false;
@@ -220,10 +221,10 @@ function shift_edit_controller()
                         form_select('rid', __('Room:'), $rooms, $rid),
                         div('row', [
                             div('col-sm-6 col-md-12 col-lg-6', [
-                                form_datetime('start', __('Start:'), $start->format('Y-m-d H:i')),
+                                form_datetime('start', __('Start:'), $start),
                             ]),
                             div('col-sm-6 col-md-12 col-lg-6', [
-                                form_datetime('end', __('End:'), $end->format('Y-m-d H:i')),
+                                form_datetime('end', __('End:'), $end),
                             ]),
                         ]),
                         form_textarea('description', __('Additional description'), $description),

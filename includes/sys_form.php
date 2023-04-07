@@ -90,7 +90,7 @@ function form_datetime(string $name, string $label, $value)
         <input class="form-control" id="%s" type="datetime-local"
             pattern="[0-9]{4}-[0-9]{2}-[0-9]{2} ([01][0-9]|2[0-3]):[0-5][0-9]" placeholder="YYYY-MM-DD HH:MM"
             name="%s" value="%s" autocomplete="off">
-    ', $dom_id, $name, htmlspecialchars($value ? $value->format('Y-m-d H:i') : '')), $dom_id);
+    ', $dom_id, $name, htmlspecialchars($value ? $value->format('Y-m-d H:i') : '')));
 }
 
 /**
