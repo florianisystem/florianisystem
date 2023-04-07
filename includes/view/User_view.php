@@ -966,3 +966,17 @@ function render_user_dect_hint()
 
     return null;
 }
+
+/**
+ * @return string|null
+ */
+function render_user_organization_hint()
+{
+    $user = auth()->user();
+    if (!$user->settings->organization_id) {
+        $text = __('Don\'t forget to select an organisation in your settings!');
+        return render_profile_link($text, null, 'text-danger');
+    }
+
+    return null;
+}
