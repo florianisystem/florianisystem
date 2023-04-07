@@ -509,7 +509,7 @@ function guest_register()
                     ]),
                 ]),
 
-                div('col-lg-4 col-xxl-5', [
+                div('col-lg-4', [
                     div('row', [
                         div('col', [
                             form_checkboxes(
