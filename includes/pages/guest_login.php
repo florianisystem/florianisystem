@@ -456,13 +456,13 @@ function guest_register()
                                 __('Allow heaven angels to contact you by e-mail.'),
                                 $email_by_human_allowed
                             ),
-                            $goodie_enabled ?
-                                form_checkbox(
-                                    'email_goody',
-                                    __('To receive vouchers, give consent that nick, email address, worked hours and shirt size will be stored until the next similar event.')
-                                    . (config('privacy_email') ? ' ' . __('To withdraw your approval, send an email to <a href="mailto:%s">%1$s</a>.', [config('privacy_email')]) : ''),
-                                    $email_goody
-                                ) : '',
+                            // $goodie_enabled ?
+                            //     form_checkbox(
+                            //         'email_goody',
+                            //         __('To receive vouchers, give consent that nick, email address, worked hours and shirt size will be stored until the next similar event.')
+                            //         . (config('privacy_email') ? ' ' . __('To withdraw your approval, send an email to <a href="mailto:%s">%1$s</a>.', [config('privacy_email')]) : ''),
+                            //         $email_goody
+                            //     ) : '',
                         ]),
 
                         div('col-sm-6', [
