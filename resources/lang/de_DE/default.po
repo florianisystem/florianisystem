@@ -1395,6 +1395,9 @@ msgstr "Karte"
 msgid "Create shifts"
 msgstr "Schichten erstellen"
 
+msgid "Shifts created."
+msgstr "Schichten erstellt."
+
 #: includes/pages/admin_shifts.php
 msgid "Additional description"
 msgstr "Zusätzliche Beschreibung"
