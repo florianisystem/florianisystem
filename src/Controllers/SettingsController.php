@@ -153,6 +153,7 @@ class SettingsController extends BaseController
 
     public function organization(): Response
     {
+        $organizations = [];
         foreach (Organization::orderBy('name')->get() as $organization) {
             $organizations[$organization->id] = $organization->name;
         }
