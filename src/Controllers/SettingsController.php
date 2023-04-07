@@ -153,7 +153,6 @@ class SettingsController extends BaseController
 
     public function organization(): Response
     {
-        $organizations = [];
         foreach (Organization::orderBy('name')->get() as $organization) {
             $organizations[$organization->id] = $organization->name;
         }
@@ -173,8 +172,16 @@ class SettingsController extends BaseController
     public function saveOrganization(Request $request): Response
     {
         $user = $this->auth->user();
-        $data = $this->validate($request, ['select_organization' => 'required']);
-        $selectOrganization = $data['select_organization'];
+
+        $data = $this->validate($request, ['select_organization' => 'optional|int']);
+
+        if (empty($data['select_organization'])) {
+            $selectOrganization = null;
+        } else {
+            // hier noch kontrolle ob Organisation überhaupt existiert
+
+            $selectOrganization = $data['select_organization'];
+        }
 
         $user->settings->organization_id = $selectOrganization;
         $user->settings->save();

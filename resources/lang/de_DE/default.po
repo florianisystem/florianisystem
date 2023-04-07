@@ -3045,6 +3045,9 @@ msgstr "Hier kannst Du Deine Organisation ändern."
 msgid "settings.organization.success"
 msgstr "Organisation wurde erfolgreich geändert."
 
+msgid "settings.organization.no_organization"
+msgstr "Keine Organisation"
+
 msgid "settings.theme"
 msgstr "Theme"
 
