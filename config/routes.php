@@ -34,6 +34,8 @@ $route->addGroup(
         $route->post('/profile', 'SettingsController@saveProfile');
         $route->get('/password', 'SettingsController@password');
         $route->post('/password', 'SettingsController@savePassword');
+        $route->get('/organization', 'SettingsController@organization');
+        $route->post('/organization', 'SettingsController@saveOrganization');
         $route->get('/theme', 'SettingsController@theme');
         $route->post('/theme', 'SettingsController@saveTheme');
         $route->get('/language', 'SettingsController@language');

@@ -3036,6 +3036,15 @@ msgstr "Passwort wiederholen"
 msgid "settings.password.success"
 msgstr "Passwort wurde erfolgreich geändert."
 
+msgid "settings.organization"
+msgstr "Organisation"
+
+msgid "settings.organization.info"
+msgstr "Hier kannst Du Deine Organisation ändern."
+
+msgid "settings.organization.success"
+msgstr "Organisation wurde erfolgreich geändert."
+
 msgid "settings.theme"
 msgstr "Theme"
 
