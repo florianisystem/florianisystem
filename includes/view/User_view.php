@@ -581,10 +581,10 @@ function User_view(
                             page_link_to('ical', ['key' => $user_source->api_key]),
                             icon('calendar-week') . __('iCal Export')
                         ) : '',
-                        ($its_me && $auth->can('shifts_json_export')) ? button(
-                            page_link_to('shifts_json_export', ['key' => $user_source->api_key]),
-                            icon('braces') . __('JSON Export')
-                        ) : '',
+                        // ($its_me && $auth->can('shifts_json_export')) ? button(
+                        //     page_link_to('shifts_json_export', ['key' => $user_source->api_key]),
+                        //     icon('braces') . __('JSON Export')
+                        // ) : '',
                         ($its_me && (
                                 $auth->can('shifts_json_export')
                                 || $auth->can('ical')
