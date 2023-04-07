@@ -613,7 +613,7 @@ function User_view(
                         )
                         : '',
                     config('enable_mobile_show') && $user_source->contact->mobile ?
-                        $user_source->settings->mobile_show ?
+                        $admin_user_privilege || $user_source->settings->mobile_show ?
                             heading(
                                 icon('phone')
                                 . ' <a href="tel:' . $user_source->contact->mobile . '">'
