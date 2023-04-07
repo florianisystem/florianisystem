@@ -988,7 +988,7 @@ msgstr "Vorschau"
 
 #: includes/pages/admin_active.php:315 includes/pages/admin_arrive.php:182
 msgid "Nickname"
-msgstr "Nick"
+msgstr "Benutzername"
 
 #: includes/pages/admin_active.php:316 includes/pages/admin_active.php:326
 #: includes/view/User_view.php:233
@@ -1112,7 +1112,7 @@ msgstr "Aufgabenbereich"
 #: includes/view/AngelTypes_view.php:298 includes/view/AngelTypes_view.php:311
 #: includes/view/User_view.php:39 includes/view/User_view.php:218
 msgid "Nick"
-msgstr "Nick"
+msgstr "Benutzername"
 
 #: includes/pages/admin_free.php:113
 msgid "Next shift"
@@ -1127,7 +1127,7 @@ msgstr "Letzte Schicht"
 #: includes/view/AngelTypes_view.php:312 includes/view/AngelTypes_view.php:481
 #: includes/view/User_view.php:60 includes/view/User_view.php:225
 msgid "DECT"
-msgstr "DECT"
+msgstr "Telefon"
 
 #: includes/pages/admin_groups.php:10 includes/sys_menu.php:119
 msgid "Grouprights"
@@ -1532,7 +1532,7 @@ msgstr "User bearbeiten"
 
 #: includes/pages/guest_login.php:77
 msgid "Please enter a valid nick."
-msgstr "Gib bitte einen erlaubten Nick an."
+msgstr "Gib bitte einen erlaubten Benutzernamen an."
 
 #: includes/pages/guest_login.php:77 includes/pages/guest_login.php:277
 #: includes/view/User_view.php:42
@@ -1541,16 +1541,16 @@ msgid ""
 "nickname."
 msgstr ""
 "Verwende bis zu 24 Buchstaben, Zahlen, verbindende Schriftzeichen (.-_) oder "
-"Leerzeichen für deinen Nick."
+"Leerzeichen für deinen Benutzernamen."
 
 #: includes/pages/guest_login.php:82
 #, php-format
 msgid "Your nick \"%s\" already exists."
-msgstr "Der Nick \"%s\" existiert bereits."
+msgstr "Der Benutzername \"%s\" existiert bereits."
 
 #: includes/pages/guest_login.php:86
 msgid "Please enter a nickname."
-msgstr "Gib bitte einen Nick an."
+msgstr "Gib bitte einen Benutzernamen an."
 
 #: includes/pages/guest_login.php:93
 msgid "E-mail address is not correct."
@@ -1583,7 +1583,7 @@ msgstr ""
 
 #: includes/pages/guest_login.php:166
 msgid "For dect numbers are only 40 digits allowed."
-msgstr "Die DECT Nummer darf nur 40 Zeichen lang sein."
+msgstr "Die Telefonnummer darf nur 40 Zeichen lang sein."
 
 #: includes/pages/guest_login.php:238
 msgid "Angel registration successful!"
@@ -1612,7 +1612,7 @@ msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 msgid ""
 "To receive vouchers, give consent that nick, email address, worked hours and shirt size "
 "will be stored until the next similar event."
-msgstr "Um Voucher zu erhalten, stimme zu, dass Nick, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
+msgstr "Um Voucher zu erhalten, stimme zu, dass Benutzername, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
 "bis zum nächsten gleichartigen Event gespeichert werden."
 
 msgid "To withdraw your approval, send an email to <a href=\"mailto:%s\">%1$s</a>."
@@ -2430,7 +2430,7 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Pronoun"
-msgstr "Pronomen"
+msgstr "Anrede"
 
 msgid "Will be shown on your profile page and in angel lists."
 msgstr "Wird auf deiner Profilseite und in Helferlisten angezeigt."
@@ -2680,7 +2680,7 @@ msgid ""
 "You need to specify a DECT phone number in your settings! If you don't have "
 "a DECT phone, just enter '-'."
 msgstr ""
-"Bitte eine DECT-Telefonnummer in den Einstellungen eingeben. Wenn du noch "
+"Bitte eine Telefonnummer in den Einstellungen eingeben. Wenn du noch "
 "keine Nummer hast, bitte einfach \"-\" angeben."
 
 msgid ""
@@ -2964,10 +2964,10 @@ msgid "settings.profile.entry_required"
 msgstr "Pflichtfeld!"
 
 msgid "settings.profile.nick"
-msgstr "Nick"
+msgstr "Benutzername"
 
 msgid "settings.profile.pronoun"
-msgstr "Pronomen"
+msgstr "Anrede"
 
 msgid "settings.profile.pronoun.info"
 msgstr "Wird auf deiner Profilseite und in Helferlisten angezeigt."
@@ -2985,7 +2985,7 @@ msgid "settings.profile.planned_departure_date"
 msgstr "Geplanter Abreisetag"
 
 msgid "settings.profile.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "settings.profile.mobile"
 msgstr "Handy"
@@ -3009,7 +3009,7 @@ msgid "settings.profile.email_by_human_allowed"
 msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 
 msgid "settings.profile.email_goody"
-msgstr "Um Voucher zu erhalten, stimme zu, dass Nick, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
+msgstr "Um Voucher zu erhalten, stimme zu, dass Benutzername, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
 "bis zum nächsten gleichartigen Event gespeichert werden."
 
 msgid "settings.profile.privacy"
@@ -3194,7 +3194,7 @@ msgid "angeltypes.name"
 msgstr "Name"
 
 msgid "angeltypes.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "angeltypes.email"
 msgstr "E-Mail"
@@ -3209,7 +3209,7 @@ msgid "room.name"
 msgstr "Name"
 
 msgid "room.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "room.map_url"
 msgstr "Karte"
