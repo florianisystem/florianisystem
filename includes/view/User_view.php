@@ -603,7 +603,7 @@ function User_view(
                 ])
             ]),
             div('row user-info', [
-                div('col-md-2', [
+                div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
                     config('enable_dect') && $user_source->contact->dect ?
                         heading(
                             icon('phone')
@@ -672,7 +672,7 @@ function User_view_state($admin_user_privilege, $freeloader, $user_source)
         $state = User_view_state_user($user_source);
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-3', [
         heading(__('User state'), 4),
         join('<br>', $state),
     ]);
@@ -782,7 +782,7 @@ function User_angeltypes_render($user_angeltypes)
             . ($angeltype->pivot->supporter ? icon('patch-check') : '') . $angeltype->name
             . '</a>';
     }
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         heading(__('Angeltypes'), 4),
         join('<br>', $output),
     ]);
@@ -799,7 +799,7 @@ function User_groups_render($user_groups)
         $output[] = __($group->name);
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         '<h4>' . __('Rights') . '</h4>',
         join('<br>', $output),
     ]);
@@ -826,7 +826,7 @@ function User_oauth_render(User $user)
         return '';
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         heading(__('OAuth'), 4),
         join('<br>', $output),
     ]);
