@@ -109,6 +109,9 @@ $route->get('/ical', 'FeedController@ical');
 $route->get('/rss', 'FeedController@rss');
 $route->get('/shifts-json-export', 'FeedController@shifts');
 
+// Map
+$route->get('/map', 'MapController@index');
+
 // Design
 $route->get('/design', 'DesignController@index');
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ session_get('locale')|split('_')[0]|escape('html_attr') }}">
+<head>
+    {% block head %}
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>{% block title %}Karte{% endblock %} - {{ config('app_name') }}</title>
+
+        <link rel="icon" href="{{ asset('assets/angel.svg') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/map_style.css') }}"/>
+        <script src="{{ asset('assets/map.js') }}"></script>
+
+    {% endblock %}
+</head>
+<body>
+
+    <div id="map"></div>
+
+</body>
+</html>

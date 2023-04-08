@@ -224,3 +224,6 @@ msgstr "Ort erfolgreich gelöscht."
 
 msgid "validation.name.exists"
 msgstr "Der Name wird bereits verwendet."
+
+msgid "validation.map_url.optional"
+msgstr "Url darf maximal 2000 Zeichen lang sein"

@@ -37,7 +37,7 @@ function Room_view(Room $room, ShiftsFilterRenderer $shiftsFilterRenderer, Shift
     if ($room->map_url) {
         $tabs[__('Map')] = sprintf(
             '<div class="map">'
-            . '<iframe style="width: 100%%; min-height: 400px; border: 0 none;" src="%s"></iframe>'
+            . '<iframe style="width: 100%%; min-height: 640px; border: 0 none;" src="%s"></iframe>'
             . '</div>',
             $room->map_url
         );

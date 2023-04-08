@@ -78,7 +78,7 @@ class RoomsController extends BaseController
                 'name'        => 'required',
                 'description' => 'required|optional',
                 'dect'        => 'required|optional',
-                'map_url'     => 'optional|url',
+                'map_url'     => 'optional|url|max:2000',
             ] + $validation
         );
 
