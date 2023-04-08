@@ -340,6 +340,9 @@ msgstr "mitmachen"
 msgid "Angeltype doesn't exist . "
 msgstr "Aufgabenbereich existiert nicht."
 
+msgid "Angel type saved."
+msgstr "Aufgabenbereich gespeichert."
+
 #: includes/controller/event_config_controller.php:11 includes/sys_menu.php:122
 msgid "Event config"
 msgstr "Event Einstellungen"
