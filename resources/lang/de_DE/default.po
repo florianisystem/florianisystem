@@ -2689,6 +2689,9 @@ msgstr ""
 "Bitte eine Telefonnummer in den Einstellungen eingeben. Wenn du noch "
 "keine Nummer hast, bitte einfach \"-\" angeben."
 
+msgid "Don't forget to select an organisation in your settings!"
+msgstr "Vergiss nicht in deinen Einstellungen eine Organistation auszuwählen."
+
 msgid ""
 "Here you can change the user entry. Under the item 'Arrived' the angel is marked as present, "
 "a yes at Active means that the angel was active."
@@ -3044,6 +3047,18 @@ msgstr "Passwort wiederholen"
 
 msgid "settings.password.success"
 msgstr "Passwort wurde erfolgreich geändert."
+
+msgid "settings.organization"
+msgstr "Organisation"
+
+msgid "settings.organization.info"
+msgstr "Hier kannst Du Deine Organisation ändern."
+
+msgid "settings.organization.success"
+msgstr "Organisation wurde erfolgreich geändert."
+
+msgid "settings.organization.no_organization"
+msgstr "Keine Organisation"
 
 msgid "settings.theme"
 msgstr "Theme"

@@ -12,6 +12,7 @@ use Engelsystem\Models\Message;
 use Engelsystem\Models\News;
 use Engelsystem\Models\NewsComment;
 use Engelsystem\Models\OAuth;
+use Engelsystem\Models\Organization;
 use Engelsystem\Models\Privilege;
 use Engelsystem\Models\Question;
 use Engelsystem\Models\Shifts\Shift;
@@ -48,6 +49,7 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property-read Collection|News[]             $news
  * @property-read Collection|NewsComment[]      $newsComments
  * @property-read Collection|OAuth[]            $oauth
+ * @property-read Collection|Organization[]     $organizations
  * @property-read SupportCollection|Privilege[] $privileges
  * @property-read Collection|AngelType[]        $userAngelTypes
  * @property-read UserAngelType                 $pivot

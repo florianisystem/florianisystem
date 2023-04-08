@@ -37,6 +37,7 @@ function header_render_hints()
         $hints_renderer->addHint(render_user_arrived_hint(), true);
         $hints_renderer->addHint(render_user_tshirt_hint(), true);
         $hints_renderer->addHint(render_user_dect_hint(), true);
+        $hints_renderer->addHint(render_user_organization_hint(), true);
 
         return $hints_renderer->render();
     }

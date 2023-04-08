@@ -10,6 +10,7 @@ use Illuminate\Database\Query\Builder as QueryBuilder;
 /**
  * @property string $language
  * @property int    $theme
+ * @property int    $organization_id
  * @property bool   $email_human
  * @property bool   $email_messages
  * @property bool   $email_goody
@@ -52,6 +53,7 @@ class Settings extends HasUserModel
         'user_id',
         'language',
         'theme',
+        'organization_id',
         'email_human',
         'email_messages',
         'email_goody',
@@ -64,6 +66,7 @@ class Settings extends HasUserModel
     protected $casts = [ // phpcs:ignore
         'user_id'         => 'integer',
         'theme'           => 'integer',
+        'organization_id' => 'integer',
         'email_human'     => 'boolean',
         'email_messages'  => 'boolean',
         'email_goody'     => 'boolean',
