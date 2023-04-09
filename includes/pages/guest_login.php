@@ -7,6 +7,7 @@ use Engelsystem\Config\GoodieType;
 use Engelsystem\Models\AngelType;
 use Engelsystem\Models\Group;
 use Engelsystem\Models\OAuth;
+use Engelsystem\Models\Organization;
 use Engelsystem\Models\User\Contact;
 use Engelsystem\Models\User\PersonalData;
 use Engelsystem\Models\User\Settings;
@@ -67,6 +68,15 @@ function guest_register()
     $password_hash = '';
     $selected_angel_types = [];
     $planned_arrival_date = null;
+
+    //$organizations = [ 1 => 'FF Leobersdorf', 2 => 'FF Sollenau', 3 => 'FF Kottingbrunn'];
+    /** @var Organization[]|Collection $organizations_source */
+    $organizations_source = Organization::all(['id', 'name']);
+    $organizations = [];
+    foreach ($organizations_source as $value) {
+        $organizations[$value['id']] = $value['name'];
+    }
+    $organization = null;
 
     /** @var AngelType[]|Collection $angel_types_source */
     $angel_types_source = AngelType::all();
@@ -181,6 +191,11 @@ function guest_register()
             }
         }
 
+        if ($request->has('organization') && is_numeric($request->input('organization')) &&
+            isset($organizations[$request->input('organization')])) {
+            $organization = $request->input('organization');
+        } 
+
         if ($enable_password && $request->has('password') && strlen($request->postData('password')) >= $min_password_length) {
             if ($request->postData('password') != $request->postData('password2')) {
                 $valid = false;
@@ -271,6 +286,7 @@ function guest_register()
             $settings = new Settings([
                 'language'        => $session->get('locale'),
                 'theme'           => config('theme'),
+                'organization_id' => $organization,
                 'email_human'     => $email_by_human_allowed,
                 'email_messages'  => $email_messages,
                 'email_goody'     => $email_goody,
@@ -506,6 +522,22 @@ function guest_register()
                                 __('Please select...')
                             ) : '',
                         ]),
+                    ]),
+
+                    div('row', [
+                        div('col-sm-6', [
+                            form_select(
+                                'organization',
+                                __('Organization'),
+                                $organizations,
+                                $organization,
+                                __('Please select...')
+                            ),
+                        ]),
+                        form_info(
+                            '',
+                            __('If your organization is not listed here, please contact the event organizer to add your organization. You can also set this later in your settings.')
+                        ),
                     ]),
                 ]),
 
