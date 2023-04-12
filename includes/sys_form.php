@@ -121,7 +121,7 @@ function form_checkboxes($name, $label, $items, $selected)
                         ' . $group . '
                     </button>
                 </h2>
-                <div id="collapse_' . $groupId . '" class="accordion-collapse collapse">
+                <div id="collapse_' . $groupId . '" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                         ' . join('', $entries) . '
                     </div>
