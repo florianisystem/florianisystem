@@ -14,7 +14,7 @@ return [
     ],
 
     // For accessing stats
-    'api_key'                 => '',
+    'api_key'                 => env('API_KEY', ''),
 
     // Enable maintenance mode (show a static page)
     'maintenance'             => (bool) env('MAINTENANCE', false),
