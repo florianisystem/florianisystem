@@ -6,7 +6,7 @@ namespace Engelsystem\Migrations;
 
 use Engelsystem\Database\Migration\Migration;
 
-class AddAdminOrganizationPermission extends Migration
+class AddAdminOrganizationsPermission extends Migration
 {
     /**
      * Run the migration
