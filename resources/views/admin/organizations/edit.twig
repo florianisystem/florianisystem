@@ -31,13 +31,13 @@
             </div>
         </div>
 
-        <div class="col-md-12">
-            <div class="btn-group">
-                {{ f.submit(__('form.save'), {'icon_left': 'save'}) }}
-                {% if organization %}
+        <div class="col-lg-6">
+            {{ f.submit(__('form.save'), {'icon_left': 'save'}) }}
+            {% if organization %}
+                <span class="float-end">
                     {{ f.submit(__('form.delete'), {'name': 'delete', 'btn_type': 'danger', 'icon_left': 'trash'}) }}
-                {% endif %}
-            </div>
+                </span>
+            {% endif %}
         </div>
 
     </form>
