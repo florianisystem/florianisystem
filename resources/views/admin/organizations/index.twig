@@ -36,7 +36,7 @@
                             {% for organization in organizations %}
                                 <tr>
                                     <td>
-                                        <a href="{{ url('/admin/organizations/show/' ~ organization.id) }}">
+                                        <a href="{{ url('/admin/organizations/view/' ~ organization.id) }}">
                                             {{ organization.name }}
                                         </a>
                                     </td>

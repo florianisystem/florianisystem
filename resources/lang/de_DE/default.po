@@ -3239,7 +3239,7 @@ msgid "organization.phone"
 msgstr "Telefon"
 
 msgid "organization.contact"
-msgstr "Kontakt"
+msgstr "Ansprechperson"
 
 msgid "organization.create.title"
 msgstr "Organisation erstellen"

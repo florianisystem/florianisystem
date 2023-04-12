@@ -179,7 +179,7 @@ $route->addGroup(
             function (RouteCollector $route): void {
                 $route->get('', 'Admin\\OrganizationsController@index');
                 $route->post('', 'Admin\\OrganizationsController@delete');
-                $route->get('/show[/{organization_id:\d+}]', 'Admin\\OrganizationsController@show');
+                $route->get('/view[/{organization_id:\d+}]', 'Admin\\OrganizationsController@view');
                 $route->get('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@edit');
                 $route->post('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@save');
             }

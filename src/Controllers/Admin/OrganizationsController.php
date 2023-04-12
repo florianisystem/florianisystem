@@ -12,7 +12,6 @@ use Engelsystem\Http\Request;
 use Engelsystem\Http\Response;
 use Engelsystem\Http\Validation\Validator;
 use Engelsystem\Models\Organization;
-use Illuminate\Database\Eloquent\Collection;
 use Psr\Log\LoggerInterface;
 
 class OrganizationsController extends BaseController
@@ -44,7 +43,7 @@ class OrganizationsController extends BaseController
         );
     }
 
-    public function show(Request $request): Response
+    public function view(Request $request): Response
     {
         $organizationId = (int) $request->getAttribute('organization_id');
 
@@ -139,7 +138,7 @@ class OrganizationsController extends BaseController
     protected function showDetails(?Organization $organization): Response
     {
         return $this->response->withView(
-            'admin/organizations/show',
+            'admin/organizations/view',
             ['organization' => $organization]
         );
     }
