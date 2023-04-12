@@ -46,10 +46,10 @@ function ShiftType_delete_view(ShiftType $shifttype)
 function ShiftType_edit_view($name, $description, $shifttype_id)
 {
     return page_with_title($shifttype_id ? __('Edit shifttype') : __('Create shifttype'), [
-        msg(),
         buttons([
-            button(page_link_to('shifttypes'), shifttypes_title(), 'back'),
+            button(page_link_to('shifttypes'), icon('list') . shifttypes_title(), 'back'),
         ]),
+        msg(),
         form([
             form_text('name', __('Name'), $name),
             form_textarea('description', __('Description'), $description),
@@ -68,9 +68,8 @@ function ShiftType_view(ShiftType $shifttype)
     $parsedown = new Parsedown();
     $title = $shifttype->name;
     return page_with_title($title, [
-        msg(),
         buttons([
-            button(page_link_to('shifttypes'), shifttypes_title(), 'back'),
+            button(page_link_to('shifttypes'), icon('list') . shifttypes_title(), 'back'),
             button(
                 page_link_to('shifttypes', ['action' => 'edit', 'shifttype_id' => $shifttype->id]),
                 icon('pencil') . __('edit')
@@ -80,6 +79,7 @@ function ShiftType_view(ShiftType $shifttype)
                 icon('trash') . __('delete'),
             ),
         ]),
+        msg(),
         heading(__('Description'), 2),
         $parsedown->parse($shifttype->description),
     ], true);
@@ -115,10 +115,10 @@ function ShiftTypes_list_view($shifttypes)
     }
 
     return page_with_title(shifttypes_title(), [
-        msg(),
         buttons([
             button(page_link_to('shifttypes', ['action' => 'edit']), __('New shifttype'), 'add'),
         ]),
+        msg(),
         table([
             'name'    => __('Name'),
             'actions' => '',
