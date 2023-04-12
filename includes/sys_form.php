@@ -117,7 +117,7 @@ function form_checkboxes($name, $label, $items, $selected)
         $html .= '
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $groupId . '" aria-expanded="true" aria-controls="collapse_' . $group . '">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $groupId . '" aria-expanded="true" aria-controls="collapse_' . $group . '">
                         ' . $group . '
                     </button>
                 </h2>
