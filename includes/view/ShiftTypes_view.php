@@ -47,7 +47,7 @@ function ShiftType_edit_view($name, $description, $shifttype_id)
 {
     return page_with_title($shifttype_id ? __('Edit shifttype') : __('Create shifttype'), [
         buttons([
-            button(page_link_to('shifttypes'), shifttypes_title(), 'back'),
+            button(page_link_to('shifttypes'), icon('list') . shifttypes_title(), 'back'),
         ]),
         msg(),
         form([
@@ -69,7 +69,7 @@ function ShiftType_view(ShiftType $shifttype)
     $title = $shifttype->name;
     return page_with_title($title, [
         buttons([
-            button(page_link_to('shifttypes'), shifttypes_title(), 'back'),
+            button(page_link_to('shifttypes'), icon('list') . shifttypes_title(), 'back'),
             button(
                 page_link_to('shifttypes', ['action' => 'edit', 'shifttype_id' => $shifttype->id]),
                 icon('pencil') . __('edit')
