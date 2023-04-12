@@ -216,6 +216,12 @@ msgstr "Arbeitseinsatz erfolgreich bearbeitet."
 msgid "worklog.delete.success"
 msgstr "Arbeitseinsatz erfolgreich gelöscht."
 
+msgid "organization.edit.success"
+msgstr "Organisation erfolgreich bearbeitet."
+
+msgid "organization.delete.success"
+msgstr "Organisation erfolgreich gelöscht."
+
 msgid "room.edit.success"
 msgstr "Ort erfolgreich bearbeitet."
 

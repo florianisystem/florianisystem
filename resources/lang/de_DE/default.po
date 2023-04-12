@@ -3233,6 +3233,30 @@ msgstr "E-Mail"
 msgid "registration.register"
 msgstr "Registrieren"
 
+msgid "organization.organizations"
+msgstr "Organisationen"
+
+msgid "organization.name"
+msgstr "Name"
+
+msgid "organization.description"
+msgstr "Beschreibung"
+
+msgid "organization.email"
+msgstr "E-Mail"
+
+msgid "organization.phone"
+msgstr "Telefon"
+
+msgid "organization.contact"
+msgstr "Ansprechperson"
+
+msgid "organization.create.title"
+msgstr "Organisation erstellen"
+
+msgid "organization.edit.title"
+msgstr "Organisation bearbeiten"
+
 msgid "room.rooms"
 msgstr "Orte"
 
