@@ -173,6 +173,18 @@ $route->addGroup(
             }
         );
 
+        // Organizations
+        $route->addGroup(
+            '/organizations',
+            function (RouteCollector $route): void {
+                $route->get('', 'Admin\\OrganizationsController@index');
+                $route->post('', 'Admin\\OrganizationsController@delete');
+                $route->get('/show[/{organization_id:\d+}]', 'Admin\\OrganizationsController@show');
+                $route->get('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@edit');
+                $route->post('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@save');
+            }
+        );
+
         // User
         $route->addGroup(
             '/user/{user_id:\d+}',

@@ -1,0 +1,73 @@
+{% extends 'layouts/app.twig' %}
+{% import 'macros/base.twig' as m %}
+{% import 'macros/form.twig' as f %}
+
+{% block title %}{{ __('organization.organizations') }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>
+            {{ block('title') }}
+
+            {% if is_index|default(false) %}
+                {{ m.button(m.icon('plus-lg'), url('/admin/organizations/edit'), 'secondary') }}
+            {% endif %}
+        </h1>
+
+        {% include 'layouts/parts/messages.twig' %}
+
+        <div class="row">
+
+            {% block row_content %}
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>{{ __('organization.name') }}</th>
+                                <th>{{ __('organization.email') }}</th>
+                                <th>{{ __('organization.phone') }}</th>
+                                <th>{{ __('organization.contact') }}</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for organization in organizations %}
+                                <tr>
+                                    <td>
+                                        <a href="{{ url('/admin/organizations/show/' ~ organization.id) }}">
+                                            {{ organization.name }}
+                                        </a>
+                                    </td>
+
+                                    <td>{{ m.iconBool(organization.email) }}</td>
+
+                                    <td>{{ m.iconBool(organization.phone) }}</td>
+
+                                    <td>{{ m.iconBool(organization.contact_person) }}</td>
+
+                                    <td>
+                                        <div class="d-flex ms-auto">
+
+                                            {{ m.button(m.icon('pencil'), url('admin/organizations/edit/' ~ organization.id), null, 'sm', __('form.edit')) }}
+
+                                            <form method="post" class="ps-1">
+                                                {{ csrf() }}
+                                                {{ f.hidden('id', organization.id) }}
+                                                {{ f.button(m.icon('trash'), {'title': __('form.delete'), 'name': 'delete', 'type': 'submit', 'btn_type': 'danger', 'size': 'sm'}) }}
+                                            </form>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endblock %}
+
+        </div>
+    </div>
+{% endblock %}

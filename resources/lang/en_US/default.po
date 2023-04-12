@@ -480,6 +480,30 @@ msgstr "E-Mail"
 msgid "registration.register"
 msgstr "Register"
 
+msgid "organization.organizations"
+msgstr "Organizations"
+
+msgid "organization.name"
+msgstr "Name"
+
+msgid "organization.description"
+msgstr "Description"
+
+msgid "organization.email"
+msgstr "E-Mail"
+
+msgid "organization.phone"
+msgstr "Phone"
+
+msgid "organization.contact"
+msgstr "Contact"
+
+msgid "organization.create.title"
+msgstr "Create organization"
+
+msgid "organization.edit.title"
+msgstr "Edit organization"
+
 msgid "room.rooms"
 msgstr "Rooms"
 

@@ -1,0 +1,44 @@
+{% extends 'admin/organizations/index.twig' %}
+{% import 'macros/base.twig' as m %}
+{% import 'macros/form.twig' as f %}
+
+{% block title %}{{ organization ? __('organization.edit.title') : __('organization.create.title') }}{% endblock %}
+
+{% block row_content %}
+    <form method="post">
+        {{ csrf() }}
+        {{ f.hidden('id', organization ? organization.id : '') }}
+
+        <div class="row">
+            <div class="col-lg-6">
+                {{ f.input(
+                    'name',
+                    __('organization.name'),
+                    null,
+                    {'required': true, 'entry_required_icon': true, 'value': f.formData('organization', organization ? organization.name : '')}
+                ) }}
+
+                {{ f.input('email', __('organization.email'), null, {'value': f.formData('email', organization ? organization.email : '')}) }}
+                {{ f.input('phone', __('organization.phone'), null, {'value': f.formData('phone', organization ? organization.phone : '')}) }}
+                {{ f.input('contact_person', __('organization.contact'), null, {'value': f.formData('contact_person', organization ? organization.contact_person : '')}) }}
+
+
+                {{ f.textarea(
+                    'description',
+                    __('organization.description'),
+                    {'value': f.formData('description', organization ? organization.description : ''), 'rows': 5, 'info': __('form.markdown')}
+                ) }}
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="btn-group">
+                {{ f.submit(__('form.save'), {'icon_left': 'save'}) }}
+                {% if organization %}
+                    {{ f.submit(__('form.delete'), {'name': 'delete', 'btn_type': 'danger', 'icon_left': 'trash'}) }}
+                {% endif %}
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
