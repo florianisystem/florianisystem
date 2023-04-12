@@ -603,13 +603,14 @@ function User_view(
                 ])
             ]),
             div('row user-info', [
-                div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
+                div('col-sm-6 col-lg-4 col-xl-3', [
                     config('enable_dect') && $user_source->contact->dect ?
                         heading(
                             icon('phone')
                             . ' <a href="tel:' . $user_source->contact->dect . '">'
                             . $user_source->contact->dect
-                            . '</a>'
+                            . '</a>',
+                            3
                         )
                         : '',
                     config('enable_mobile_show') && $user_source->contact->mobile ?
@@ -618,7 +619,8 @@ function User_view(
                                 icon('phone')
                                 . ' <a href="tel:' . $user_source->contact->mobile . '">'
                                 . $user_source->contact->mobile
-                                . '</a>'
+                                . '</a>',
+                                3
                             )
                             : ''
                         : '',
@@ -626,7 +628,8 @@ function User_view(
                         heading(
                             '<a href="' . page_link_to('/messages/' . $user_source->id) . '">'
                             . icon('envelope')
-                            . '</a>'
+                            . '</a>',
+                            3
                         )
                         : '',
                 ]),
