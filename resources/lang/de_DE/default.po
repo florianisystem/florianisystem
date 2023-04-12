@@ -1632,6 +1632,16 @@ msgstr "Geplanter Ankunftstag"
 msgid "Shirt size"
 msgstr "T-Shirt Größe"
 
+msgid "Organization"
+msgstr "Organisation"
+
+msgid ""
+"If your organization is not listed here, please contact the event organizer to add your "
+"organization. You can also set this later in your settings."
+msgstr ""
+"Ist deine Organisation hier nicht aufgelistet, dann melde dich beim Veranstalter um auch deine "
+"Organisation eintragen zu lassen. Du kannst diese auch nachträglich in den Einstellungen setzen."
+
 #: includes/pages/guest_login.php:320
 msgid "What do you want to do?"
 msgstr "Was möchtest Du machen?"
