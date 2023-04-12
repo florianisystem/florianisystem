@@ -63,7 +63,7 @@ function make_navigation()
     $page = current_page();
     $menu = [];
     $pages = [
-        // 'news'           => __('News'),
+        'news'           => __('News'),
         // 'meetings'       => [__('Meetings'), 'user_meetings'],
         'user_shifts'    => __('Shifts'),
         'angeltypes'     => __('Angeltypes'),
