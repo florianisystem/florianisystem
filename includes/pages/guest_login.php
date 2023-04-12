@@ -194,7 +194,7 @@ function guest_register()
         if ($request->has('organization') && is_numeric($request->input('organization')) &&
             isset($organizations[$request->input('organization')])) {
             $organization = $request->input('organization');
-        } 
+        }
 
         if ($enable_password && $request->has('password') && strlen($request->postData('password')) >= $min_password_length) {
             if ($request->postData('password') != $request->postData('password2')) {
@@ -552,7 +552,7 @@ function guest_register()
                                     __('Description of job types')
                                 ),
                                 $angel_types,
-                                $selected_angel_types
+                                [],
                             ),
                             form_info(
                                 '',
