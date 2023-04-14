@@ -68,6 +68,8 @@ function guest_register()
     $password_hash = '';
     $selected_angel_types = [];
     $planned_arrival_date = null;
+    $organization = null;
+    $gdpr = false;
 
     //$organizations = [ 1 => 'FF Leobersdorf', 2 => 'FF Sollenau', 3 => 'FF Kottingbrunn'];
     /** @var Organization[]|Collection $organizations_source */
@@ -76,7 +78,6 @@ function guest_register()
     foreach ($organizations_source as $value) {
         $organizations[$value['id']] = $value['name'];
     }
-    $organization = null;
 
     /** @var AngelType[]|Collection $angel_types_source */
     $angel_types_source = AngelType::all();
@@ -249,6 +250,13 @@ function guest_register()
         }
         if ($request->has('mobile')) {
             $mobile = strip_request_item('mobile');
+        }
+
+        if ($request->has('gdpr')) {
+            $gdpr = true;
+        } else {
+            $valid = false;
+            error(__('registration.gdpr.required'));
         }
 
         if ($valid) {
@@ -533,11 +541,18 @@ function guest_register()
                                 $organization,
                                 __('Please select...')
                             ),
+                            form_info(
+                                '',
+                                __('If your organization is not listed here, please contact the event organizer to add your organization. You can also set this later in your settings.')
+                            ),
                         ]),
-                        form_info(
-                            '',
-                            __('If your organization is not listed here, please contact the event organizer to add your organization. You can also set this later in your settings.')
-                        ),
+                        div('col-sm-6', [
+                            form_checkbox(
+                                'gdpr',
+                                __('registration.gdpr'),
+                                $gdpr
+                            ),
+                        ]),
                     ]),
                 ]),
 

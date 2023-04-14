@@ -229,3 +229,14 @@ msgstr "Room successfully deleted."
 
 msgid "validation.name.exists"
 msgstr "The name is already used."
+
+msgid "validation.map_url.optional"
+msgstr "Url darf maximal 2000 Zeichen lang sein"
+
+msgid "registration.gdpr"
+msgstr "Ich bin damit einverstanden, dass meine angegebenen Daten im ausgewählten Umfang zum Zwecke der Bearbeitung meiner Anmeldung verarbeitet und gespeichert werden."
+"<br/>Der angegebene Vor- und Nachname ist für alle Helfer auf der Plattform einsehbar."
+"<br/>Die personenbezogenen Daten werden spätestens 6 Monate nach der Veranstaltung gelöscht."
+
+msgid "registration.gdpr.required"
+msgstr "Die Zustimmung zur Datennutzung ist erforderlich."
