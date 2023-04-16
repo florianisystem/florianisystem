@@ -30,7 +30,9 @@
                     {% if footerItems.FAQ starts with '/' %}
                         {% set url = url(footerItems.FAQ) %}
                     {% endif %}
-                    <a href="{{ url }}" class="btn btn-primary">{{ __('faq.faq') }}</a>
+                    {% apply enkode_emails %}
+                        <a href="{{ url }}" class="btn btn-primary">{{ __('faq.faq') }}</a>
+                    {% endapply %}
                 {% endif %}
             </div>
         </div>
@@ -94,9 +96,11 @@
 
                                                             <dd class="col-sm-9">
                                                                 {% if info.url is defined %}
-                                                                    <a href="{{ info['url'] }}:{{ angeltype.data[type] | e('html_attr') }}">
-                                                                        {{ angeltype.data[type] }}
-                                                                    </a>
+                                                                    {% apply enkode_emails %}
+                                                                        <a href="{{ info['url'] }}:{{ angeltype.data[type] }}">
+                                                                            {{ angeltype.data[type] }}
+                                                                        </a>
+                                                                    {% endapply %}
                                                                 {% else %}
                                                                     {{ angeltype.data[type] }}
                                                                 {% endif %}
