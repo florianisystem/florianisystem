@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Engelsystem\Helpers\BarChart;
 use Engelsystem\Models\User\User;
 
@@ -53,7 +54,7 @@ function admin_arrive()
         $user_source = User::find($user_id);
         if ($user_source) {
             $user_source->state->arrived = true;
-            $user_source->state->arrival_date = new Carbon\Carbon();
+            $user_source->state->arrival_date = new Carbon();
             $user_source->state->save();
 
             engelsystem_log('User set has arrived: ' . User_Nick_render($user_source, true));
@@ -115,7 +116,7 @@ function admin_arrive()
         ]);
 
         if ($usr->state->arrival_date) {
-            $day = $usr->state->arrival_date->format(__('Y-m-d'));
+            $day = $usr->state->arrival_date->format('Y-m-d');
             if (!isset($arrival_count_at_day[$day])) {
                 $arrival_count_at_day[$day] = 0;
             }
@@ -123,7 +124,7 @@ function admin_arrive()
         }
 
         if ($usr->personalData->planned_arrival_date) {
-            $day = $usr->personalData->planned_arrival_date->format(__('Y-m-d'));
+            $day = $usr->personalData->planned_arrival_date->format('Y-m-d');
             if (!isset($planned_arrival_count_at_day[$day])) {
                 $planned_arrival_count_at_day[$day] = 0;
             }
@@ -131,7 +132,7 @@ function admin_arrive()
         }
 
         if ($usr->personalData->planned_departure_date && $usr->state->arrived) {
-            $day = $usr->personalData->planned_departure_date->format(__('Y-m-d'));
+            $day = $usr->personalData->planned_departure_date->format('Y-m-d');
             if (!isset($planned_departure_count_at_day[$day])) {
                 $planned_departure_count_at_day[$day] = 0;
             }
@@ -150,7 +151,7 @@ function admin_arrive()
     foreach ($arrival_count_at_day as $day => $count) {
         $arrival_sum += $count;
         $arrival_at_day[$day] = [
-            'day'   => $day,
+            'day'   => Carbon::createFromFormat('Y-m-d', $day)->format(__('Y-m-d')),
             'count' => $count,
             'sum'   => $arrival_sum,
         ];
@@ -161,7 +162,7 @@ function admin_arrive()
     foreach ($planned_arrival_count_at_day as $day => $count) {
         $planned_arrival_sum += $count;
         $planned_arrival_at_day[$day] = [
-            'day'   => $day,
+            'day'   => Carbon::createFromFormat('Y-m-d', $day)->format(__('Y-m-d')),
             'count' => $count,
             'sum'   => $planned_arrival_sum,
         ];
@@ -172,7 +173,7 @@ function admin_arrive()
     foreach ($planned_departure_count_at_day as $day => $count) {
         $planned_departure_sum += $count;
         $planned_departure_at_day[$day] = [
-            'day'   => $day,
+            'day'   => Carbon::createFromFormat('Y-m-d', $day)->format(__('Y-m-d')),
             'count' => $count,
             'sum'   => $planned_departure_sum,
         ];
