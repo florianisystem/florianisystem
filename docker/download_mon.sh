@@ -10,4 +10,4 @@ chmod +x php-fpm_exporter
 
 wget $(wget -q -O - 'https://api.github.com/repos/grafana/agent/releases/latest' | jq -r '.assets[] | select(.name=="grafana-agent-linux-amd64.zip").browser_download_url')
 unzip grafana-agent-linux-amd64.zip
-mv 
+rm grafana-agent-linux-amd64.zip
