@@ -1030,6 +1030,9 @@ msgstr "T-Shirt?"
 msgid "Shirt statistic"
 msgstr "T-Shirt Statistik"
 
+msgid "Requested shirts"
+msgstr "Angefragte T-Shirts"
+
 #: includes/pages/admin_active.php:327
 msgid "Given shirts"
 msgstr "Ausgegebene T-Shirts"
@@ -2761,6 +2764,9 @@ msgstr "Goodie"
 
 msgid "Your goodie score"
 msgstr "Dein Goodie Score"
+
+msgid "Requested goodies"
+msgstr "Angefragte Goodies"
 
 msgid "Given goodies"
 msgstr "Ausgegebene Goodies"

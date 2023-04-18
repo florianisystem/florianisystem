@@ -309,19 +309,26 @@ function admin_active()
             $gc = State::query()
                 ->leftJoin('users_settings', 'users_state.user_id', '=', 'users_settings.user_id')
                 ->leftJoin('users_personal_data', 'users_state.user_id', '=', 'users_personal_data.user_id')
+                ->where('users_personal_data.shirt_size', '=', $size)
+                ->count();
+            $gcGiven = State::query()
+                ->leftJoin('users_settings', 'users_state.user_id', '=', 'users_settings.user_id')
+                ->leftJoin('users_personal_data', 'users_state.user_id', '=', 'users_personal_data.user_id')
                 ->where('users_state.got_shirt', '=', true)
                 ->where('users_personal_data.shirt_size', '=', $size)
                 ->count();
             $goodie_statistics[] = [
-                'size'  => $size,
-                'given' => $gc,
+                'size'      => $size,
+                'requested' => $gc,
+                'given'     => $gcGiven,
             ];
         }
     }
 
     $goodie_statistics[] = array_merge(
         ($goodie_tshirt ? ['size'  => '<b>' . __('Sum') . '</b>'] : []),
-        ['given' => '<b>' . State::whereGotShirt(true)->count() . '</b>']
+        ['requested' => '<b>' . array_sum(array_column($goodie_statistics, 'requested')) . '</b>'],
+        ['given' => '<b>' . array_sum(array_column($goodie_statistics, 'given')) . '</b>']
     );
 
     return page_with_title(admin_active_title(), [
@@ -358,7 +365,8 @@ function admin_active()
         $goodie_enabled ? '<h2>' . ($goodie_tshirt ? __('Shirt statistic') : __('Goodie statistic')) . '</h2>' : '',
         $goodie_enabled ? table(array_merge(
             ($goodie_tshirt ? ['size'  => __('Size')] : []),
-            ['given' => $goodie_tshirt ? __('Given shirts') : __('Given goodies') ]
+            ['requested' => $goodie_tshirt ? __('Requested shirts') : __('Requested goodies') ],
+            ['given' => $goodie_tshirt ? __('Given shirts') : __('Given goodies') ],
         ), $goodie_statistics) : '',
     ]);
 }
