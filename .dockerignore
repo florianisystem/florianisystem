@@ -3,6 +3,8 @@ docker/
 !docker/entrypoint.sh
 !docker/nginx.conf
 !docker/*exporter
+!docker/grafana-agent-linux-amd64
+!docker/grafana-agent.yml
 
 # Configuration
 config/config.php
