@@ -311,6 +311,12 @@ function admin_active()
                 ->leftJoin('users_personal_data', 'users_state.user_id', '=', 'users_personal_data.user_id')
                 ->where('users_personal_data.shirt_size', '=', $size)
                 ->count();
+            $gcShifts = State::query()
+                ->leftJoin('users_settings', 'users_state.user_id', '=', 'users_settings.user_id')
+                ->leftJoin('users_personal_data', 'users_state.user_id', '=', 'users_personal_data.user_id')
+                ->rightJoin('shift_entries', 'users_state.user_id', '=', 'shift_entries.user_id')
+                ->where('users_personal_data.shirt_size', '=', $size)
+                ->count();
             $gcGiven = State::query()
                 ->leftJoin('users_settings', 'users_state.user_id', '=', 'users_settings.user_id')
                 ->leftJoin('users_personal_data', 'users_state.user_id', '=', 'users_personal_data.user_id')
@@ -320,6 +326,7 @@ function admin_active()
             $goodie_statistics[] = [
                 'size'      => $size,
                 'requested' => $gc,
+                'shifts'    => $gcShifts,
                 'given'     => $gcGiven,
             ];
         }
@@ -328,6 +335,7 @@ function admin_active()
     $goodie_statistics[] = array_merge(
         ($goodie_tshirt ? ['size'  => '<b>' . __('Sum') . '</b>'] : []),
         ['requested' => '<b>' . array_sum(array_column($goodie_statistics, 'requested')) . '</b>'],
+        ['shifts' => '<b>' . array_sum(array_column($goodie_statistics, 'shifts')) . '</b>'],
         ['given' => '<b>' . array_sum(array_column($goodie_statistics, 'given')) . '</b>']
     );
 
@@ -366,6 +374,7 @@ function admin_active()
         $goodie_enabled ? table(array_merge(
             ($goodie_tshirt ? ['size'  => __('Size')] : []),
             ['requested' => $goodie_tshirt ? __('Requested shirts') : __('Requested goodies') ],
+            ['shifts' => $goodie_tshirt ? __('Requested shirts (with shifts)') : __('Requested goodies (with shifts)') ],
             ['given' => $goodie_tshirt ? __('Given shirts') : __('Given goodies') ],
         ), $goodie_statistics) : '',
     ]);

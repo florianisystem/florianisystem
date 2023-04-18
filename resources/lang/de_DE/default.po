@@ -1033,6 +1033,9 @@ msgstr "T-Shirt Statistik"
 msgid "Requested shirts"
 msgstr "Angefragte T-Shirts"
 
+msgid "Requested shirts (with shifts)"
+msgstr "Angefragte T-Shirts (mit Schichten)"
+
 #: includes/pages/admin_active.php:327
 msgid "Given shirts"
 msgstr "Ausgegebene T-Shirts"
@@ -2767,6 +2770,9 @@ msgstr "Dein Goodie Score"
 
 msgid "Requested goodies"
 msgstr "Angefragte Goodies"
+
+msgid "Requested goodies (with shifts)"
+msgstr "Angefragte Goodies (mit Schichten)"
 
 msgid "Given goodies"
 msgstr "Ausgegebene Goodies"
