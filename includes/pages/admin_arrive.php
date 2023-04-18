@@ -131,7 +131,7 @@ function admin_arrive()
             $planned_arrival_count_at_day[$day]++;
         }
 
-        if ($usr->personalData->planned_departure_date && $usr->state->arrived) {
+        if ($usr->personalData->planned_departure_date) {
             $day = $usr->personalData->planned_departure_date->format('Y-m-d');
             if (!isset($planned_departure_count_at_day[$day])) {
                 $planned_departure_count_at_day[$day] = 0;
