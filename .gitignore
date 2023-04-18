@@ -43,3 +43,6 @@ _vimrc_local.vim
 /package-lock.json
 /yarn-error.log
 /.yarn-cache
+
+# Monitoring
+*exporter

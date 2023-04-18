@@ -37,6 +37,7 @@ COPY --from=themes /app/public/assets /app/public/assets/
 
 RUN find /app/storage/ -type f -not -name VERSION -exec rm {} \;
 
+
 # Build the PHP/Nginx container
 FROM php:8.2-fpm-alpine
 WORKDIR /var/www
@@ -47,6 +48,8 @@ COPY docker/entrypoint.sh /
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 ENTRYPOINT /entrypoint.sh
 EXPOSE 80
+EXPOSE 9113
+EXPOSE 9253
 COPY --from=data /app/ /var/www
 RUN chown -R www-data:www-data /var/www/storage/ && \
     rm -r /var/www/html
@@ -60,3 +63,7 @@ ENV TRUSTED_PROXIES 10.0.0.0/8,::ffff:10.0.0.0/8,\
                     172.16.0.0/12,::ffff:172.16.0.0/12,\
                     192.168.0.0/16,::ffff:192.168.0.0/16,\
                     ::1/128,fc00::/7,fec0::/10
+
+# Add exporters
+COPY docker/php-fpm_exporter /php-fpm_exporter
+COPY docker/nginx-prometheus-exporter /nginx-prometheus-exporter

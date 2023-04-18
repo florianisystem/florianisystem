@@ -13,6 +13,8 @@ services:
       MYSQL_DATABASE: engelsystem
     ports:
       - "5080:80"
+      - "9113:9113"
+      - "9253:9253"
     env_file: deployment.env
     networks:
       - database

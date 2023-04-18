@@ -46,4 +46,7 @@ fi
 bin/migrate
 
 nginx -g 'daemon off;'&
+
+/php-fpm_exporter server --phpfpm.scrape-uri 'tcp://localhost:9000/status' &
+/nginx-prometheus-exporter -nginx.retries 6 -nginx.retry-interval 10s &
 exec "$@"
