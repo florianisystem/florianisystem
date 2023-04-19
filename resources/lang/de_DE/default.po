@@ -1548,12 +1548,8 @@ msgstr "Gib bitte einen erlaubten Benutzernamen an."
 
 #: includes/pages/guest_login.php:77 includes/pages/guest_login.php:277
 #: includes/view/User_view.php:42
-msgid ""
-"Use up to 24 letters, numbers, connecting punctuations or spaces for your "
-"nickname."
-msgstr ""
-"Verwende bis zu 24 Buchstaben, Zahlen, verbindende Schriftzeichen (.-_) oder "
-"Leerzeichen für deinen Benutzernamen."
+msgid "Use up to 24 letters, numbers or connecting punctuations for your nickname."
+msgstr "Verwende bis zu 24 Buchstaben, Zahlen oder verbindende Schriftzeichen (.-_) für deinen Benutzernamen."
 
 #: includes/pages/guest_login.php:82
 #, php-format
@@ -2988,11 +2984,8 @@ msgstr "Nachricht"
 msgid "settings.settings"
 msgstr "Einstellungen"
 
-msgid "settings.profile.user_details.info"
-msgstr "Hier kannst Du Deine Details ändern."
-
 msgid "settings.profile.entry_required"
-msgstr "Pflichtfeld!"
+msgstr "Pflichtfeld"
 
 msgid "settings.profile.nick"
 msgstr "Benutzername"
