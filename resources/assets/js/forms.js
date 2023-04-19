@@ -314,3 +314,15 @@ ready(() => {
     });
   }
 });
+
+/**
+ * Prevent scrolling on # links in menu
+ */
+ready(() => {
+  const elements = document.querySelectorAll('.navbar a[href="#"]');
+  elements.forEach((a) => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  });
+});
