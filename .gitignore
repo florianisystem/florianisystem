@@ -45,4 +45,5 @@ _vimrc_local.vim
 /.yarn-cache
 
 # Monitoring
-*exporter
+/docker/*exporter
+/docker/grafana-agent-linux-amd64
