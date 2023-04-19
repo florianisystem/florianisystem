@@ -8,6 +8,8 @@ metrics:
           url: https://${grafanahost}/api/prom/push
       scrape_configs:
         - job_name: ${ENVIRONMENT}
+          params:
+            api_key: [${API_KEY}]
           static_configs:
             - targets:
               - 'localhost'
