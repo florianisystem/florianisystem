@@ -37,12 +37,14 @@ COPY --from=themes /app/public/assets /app/public/assets/
 
 RUN find /app/storage/ -type f -not -name VERSION -exec rm {} \;
 
+
 # Build the PHP/Nginx container
 FROM php:8.2-fpm-alpine
 WORKDIR /var/www
-RUN apk add --no-cache icu-dev nginx && \
+RUN apk add --no-cache icu-dev nginx gcompat && \
     docker-php-ext-install intl pdo_mysql && \
-    sed -i 's/9000/127.0.0.1:9000/' /usr/local/etc/php-fpm.d/zz-docker.conf
+    sed -i 's/9000/127.0.0.1:9000/' /usr/local/etc/php-fpm.d/zz-docker.conf && \
+    sed -i 's/;pm.status/pm.status/' /usr/local/etc/php-fpm.d/www.conf
 COPY docker/entrypoint.sh /
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 ENTRYPOINT /entrypoint.sh
@@ -60,3 +62,9 @@ ENV TRUSTED_PROXIES 10.0.0.0/8,::ffff:10.0.0.0/8,\
                     172.16.0.0/12,::ffff:172.16.0.0/12,\
                     192.168.0.0/16,::ffff:192.168.0.0/16,\
                     ::1/128,fc00::/7,fec0::/10
+
+# Add exporters
+COPY docker/php-fpm_exporter /php-fpm_exporter
+COPY docker/nginx-prometheus-exporter /nginx-prometheus-exporter
+COPY docker/grafana-agent-linux-amd64 /grafana-agent
+COPY docker/grafana-agent.yml /grafana-agent.yml
