@@ -33,7 +33,7 @@ class FeedController extends BaseController
     {
         $news = $this->getNews();
 
-        return $this->response
+        return $this->withEtag($news)
             ->withHeader('content-type', 'application/atom+xml; charset=utf-8')
             ->withView('api/atom', ['news' => $news]);
     }
@@ -42,7 +42,7 @@ class FeedController extends BaseController
     {
         $news = $this->getNews();
 
-        return $this->response
+        return $this->withEtag($news)
             ->withHeader('content-type', 'application/rss+xml; charset=utf-8')
             ->withView('api/rss', ['news' => $news]);
     }
@@ -51,7 +51,7 @@ class FeedController extends BaseController
     {
         $shifts = $this->getShifts();
 
-        return $this->response
+        return $this->withEtag($shifts)
             ->withHeader('content-type', 'text/calendar; charset=utf-8')
             ->withHeader('content-disposition', 'attachment; filename=shifts.ics')
             ->withView('api/ical', ['shiftEntries' => $shifts]);
@@ -121,9 +121,16 @@ class FeedController extends BaseController
             ];
         }
 
-        return $this->response
+        return $this->withEtag($response)
             ->withAddedHeader('content-type', 'application/json; charset=utf-8')
             ->withContent(json_encode($response));
+    }
+
+    protected function withEtag(mixed $value): Response
+    {
+        $hash = md5(json_encode($value));
+
+        return $this->response->setEtag($hash);
     }
 
     protected function getNews(): Collection
@@ -145,6 +152,6 @@ class FeedController extends BaseController
             ->leftJoin('shifts', 'shifts.id', 'shift_entries.shift_id')
             ->orderBy('shifts.start')
             ->with(['shift', 'shift.room', 'shift.shiftType'])
-            ->get();
+            ->get(['*', 'shift_entries.id']);
     }
 }

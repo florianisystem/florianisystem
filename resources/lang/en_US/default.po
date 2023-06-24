@@ -16,12 +16,6 @@ msgstr ""
 "Language: en_US\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#~ msgid "auth.no-nickname"
-#~ msgstr "Please enter a nickname."
-
-#~ msgid "auth.no-password"
-#~ msgstr "Please enter a password."
-
 msgid "auth.password.error"
 msgstr "Your password is incorrect. Please try it again."
 
@@ -54,6 +48,9 @@ msgstr ""
 "Please have a look at the "
 "[contributors list on GitHub](https://github.com/florianisystem/florianisystem/graphs/contributors)"
 " for a complete list."
+
+msgid "form.select_placeholder"
+msgstr "Please select..."
 
 msgid "form.load_schedule"
 msgstr "Load schedule"

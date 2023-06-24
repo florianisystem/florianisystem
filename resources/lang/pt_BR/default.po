@@ -1339,8 +1339,7 @@ msgstr ""
 
 #: includes/pages/guest_login.php:229 includes/view/User_view.php:50
 #, php-format
-msgid ""
-"The %s is allowed to send me an email (e.g. when my shifts change)"
+msgid "settings.profile.email_shiftinfo"
 msgstr ""
 "Permito que o %s me envie emails (por exemplo, quando meus turnos "
 "mudam)"
@@ -2169,7 +2168,7 @@ msgid "Truck 12t"
 msgstr "Caminhão 12t"
 
 #: includes/view/User_view.php:7
-msgid "Please select..."
+msgid "form.select_placeholder"
 msgstr "Por favor selecione..."
 
 #: includes/view/User_view.php:38

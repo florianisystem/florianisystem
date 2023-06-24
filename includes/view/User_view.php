@@ -516,14 +516,14 @@ function User_view(
             $admin_user_worklog_privilege
         );
         if (count($my_shifts) > 0) {
-            $myshifts_table = table([
+            $myshifts_table = div('table-responsive', table([
                 'date'       => __('Day &amp; time'),
                 'duration'   => __('Duration'),
                 'room'       => __('Location'),
                 'shift_info' => __('Name &amp; workmates'),
                 'comment'    => __('Comment'),
                 'actions'    => __('Action'),
-            ], $my_shifts);
+            ], $my_shifts));
         } elseif ($user_source->state->force_active) {
             $myshifts_table = success(__('You have done enough.'), true);
         }
@@ -547,7 +547,7 @@ function User_view(
             msg(),
             div('row', [
                 div('col-md-12', [
-                    buttons([
+                    table_buttons([
                         $auth->can('user.edit.shirt') && $goodie_enabled ? button(
                             url('/admin/user/' . $user_source->id . '/goodie'),
                             icon('person') . ($goodie_tshirt ? __('Shirt') : __('Goodie'))
@@ -573,34 +573,36 @@ function User_view(
                             url('/admin/user/' . $user_source->id . '/worklog'),
                             icon('clock-history') . __('worklog.add')
                         ) : '',
-                        $its_me ? button(
+                        (($admin_user_privilege || $auth->can('admin_arrive')) && !$user_source->state->arrived) ?
+                            div('', [form([
+                                form_hidden('action', 'arrived'),
+                                form_hidden('user', $user_source->id),
+                                form_submit('submit', __('arrived'), '', false)
+                            ], page_link_to('admin_arrive'), true)]) : '',
+                    ], 'mb-2'),
+                    $its_me ? table_buttons([
+                        button(
                             page_link_to('settings/profile'),
                             icon('person-fill-gear') . __('Settings')
-                        ) : '',
-                        ($its_me && $auth->can('ical')) ? button(
+                        ),
+                        $auth->can('ical') ? button(
                             page_link_to('ical', ['key' => $user_source->api_key]),
                             icon('calendar-week') . __('iCal Export')
                         ) : '',
-                        // ($its_me && $auth->can('shifts_json_export')) ? button(
+                        // $auth->can('shifts_json_export') ? button(
                         //     page_link_to('shifts_json_export', ['key' => $user_source->api_key]),
                         //     icon('braces') . __('JSON Export')
                         // ) : '',
-                        ($its_me && (
-                                $auth->can('shifts_json_export')
-                                || $auth->can('ical')
-                                || $auth->can('atom')
-                            )) ? button(
-                                page_link_to('user_myshifts', ['reset' => 1]),
-                                icon('arrow-repeat') . __('Reset API key')
-                            ) : '',
-                    ]),
-                    (($admin_user_privilege || $auth->can('admin_arrive')) && !$user_source->state->arrived) ?
-                        div('', [form([
-                            form_hidden('action', 'arrived'),
-                            form_hidden('user', $user_source->id),
-                            form_submit('submit', __('arrived'), '', false)
-                        ], page_link_to('admin_arrive'), true)]) : '',
-                ])
+                        (
+                            $auth->can('shifts_json_export')
+                            || $auth->can('ical')
+                            || $auth->can('atom')
+                        ) ? button(
+                            page_link_to('user_myshifts', ['reset' => 1]),
+                            icon('arrow-repeat') . __('Reset API key')
+                        ) : '',
+                    ], 'mb-2') : '',
+                ]),
             ]),
             div('row user-info', [
                 div('col-sm-6 col-lg-4 col-xl-3', [
