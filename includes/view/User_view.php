@@ -113,6 +113,9 @@ function Users_view(
         $u['departure_date'] = $user->personalData->planned_departure_date
             ? $user->personalData->planned_departure_date->format(__('Y-m-d')) : '';
         $u['last_login_at'] = $user->last_login_at ? $user->last_login_at->format(__('m/d/Y h:i a')) : '';
+        if (auth()->can('admin_groups')) {
+            $u['email'] = $user->settings->email_human ? $user->email : '# ' . $user->email;
+        }
         $u['actions'] = table_buttons([
             button_icon(page_link_to('admin_user', ['id' => $user->id]), 'pencil', 'btn-sm'),
         ]);
@@ -167,6 +170,9 @@ function Users_view(
         $order_by
     );
     $user_table_headers['last_login_at'] = Users_table_header_link('last_login_at', __('Last login'), $order_by);
+    if (auth()->can('admin_groups')) {
+        $user_table_headers['email'] = Users_table_header_link('email', __('E-Mail'), $order_by);
+    }
     $user_table_headers['actions'] = '';
 
     foreach (config('disabled_user_view_columns') ?? [] as $key) {
