@@ -69,7 +69,7 @@ function admin_user()
         if (config('enable_dect')) {
             $html .= '  <tr><td>' . __('DECT') . '</td><td>' . '<input size="40" name="eDECT" value="' . $user_source->contact->dect . '" class="form-control" maxlength="40"></td></tr>' . "\n";
         }
-        if ($user_source->settings->email_human) {
+        if ($user_source->settings->email_human || auth()->can('admin_groups')) {
             $html .= '  <tr><td>' . __('settings.profile.email') . '</td><td>' . '<input type="email" size="40" name="eemail" value="' . $user_source->email . '" class="form-control" maxlength="254"></td></tr>' . "\n";
         }
         if ($goodie_tshirt) {
