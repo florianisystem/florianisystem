@@ -404,7 +404,7 @@ function admin_shifts()
             engelsystem_log('Shift needs following angel types: ' . join(', ', $needed_angel_types_info));
         }
 
-        success('Shifts created.');
+        success(__('Shifts created.'));
         throw_redirect(page_link_to('admin_shifts'));
     } else {
         $session->remove('admin_shifts_shifts');
@@ -447,7 +447,7 @@ function admin_shifts()
                     ]),
                     div('col-md-6 col-xl-7', [
                         form_textarea('description', __('Additional description'), $description),
-                        __('This description is for single shifts, otherwise please use the description in shift type.'),
+                        form_info('', __('This description is for single shifts, otherwise please use the description in shift type.')),
                     ]),
                 ]),
                 div('row', [

@@ -113,6 +113,9 @@ function Users_view(
         $u['departure_date'] = $user->personalData->planned_departure_date
             ? $user->personalData->planned_departure_date->format(__('Y-m-d')) : '';
         $u['last_login_at'] = $user->last_login_at ? $user->last_login_at->format(__('m/d/Y h:i a')) : '';
+        if (auth()->can('admin_groups')) {
+            $u['email'] = $user->settings->email_human ? $user->email : '# ' . $user->email;
+        }
         $u['actions'] = table_buttons([
             button_icon(page_link_to('admin_user', ['id' => $user->id]), 'pencil', 'btn-sm'),
         ]);
@@ -167,6 +170,9 @@ function Users_view(
         $order_by
     );
     $user_table_headers['last_login_at'] = Users_table_header_link('last_login_at', __('Last login'), $order_by);
+    if (auth()->can('admin_groups')) {
+        $user_table_headers['email'] = Users_table_header_link('email', __('E-Mail'), $order_by);
+    }
     $user_table_headers['actions'] = '';
 
     foreach (config('disabled_user_view_columns') ?? [] as $key) {
@@ -535,7 +541,7 @@ function User_view(
     }
 
     return page_with_title(
-        '<span class="icon-icon_angel"></span> '
+        '<span class="bi bi-person-fill"></span> '
         . (
         (config('enable_pronoun') && $user_source->personalData->pronoun)
             ? '<small>' . htmlspecialchars($user_source->personalData->pronoun) . '</small> '
@@ -560,12 +566,6 @@ function User_view(
                             user_driver_license_edit_link($user_source),
                             icon('person-vcard') . __('driving license')
                         ) : '',
-                        (($admin_user_privilege || $auth->can('admin_arrive')) && !$user_source->state->arrived) ?
-                            form([
-                                form_hidden('action', 'arrived'),
-                                form_hidden('user', $user_source->id),
-                                form_submit('submit', __('arrived'), '', false),
-                            ], page_link_to('admin_arrive'), true) : '',
                         ($admin_user_privilege || $auth->can('voucher.edit')) && config('enable_voucher') ?
                             button(
                                 page_link_to(
@@ -579,6 +579,12 @@ function User_view(
                             url('/admin/user/' . $user_source->id . '/worklog'),
                             icon('clock-history') . __('worklog.add')
                         ) : '',
+                        (($admin_user_privilege || $auth->can('admin_arrive')) && !$user_source->state->arrived) ?
+                            div('', [form([
+                                form_hidden('action', 'arrived'),
+                                form_hidden('user', $user_source->id),
+                                form_submit('submit', __('arrived'), '', false)
+                            ], page_link_to('admin_arrive'), true)]) : '',
                     ], 'mb-2'),
                     $its_me ? table_buttons([
                         button(
@@ -589,10 +595,10 @@ function User_view(
                             page_link_to('ical', ['key' => $user_source->api_key]),
                             icon('calendar-week') . __('iCal Export')
                         ) : '',
-                        $auth->can('shifts_json_export') ? button(
-                            page_link_to('shifts_json_export', ['key' => $user_source->api_key]),
-                            icon('braces') . __('JSON Export')
-                        ) : '',
+                        // $auth->can('shifts_json_export') ? button(
+                        //     page_link_to('shifts_json_export', ['key' => $user_source->api_key]),
+                        //     icon('braces') . __('JSON Export')
+                        // ) : '',
                         (
                             $auth->can('shifts_json_export')
                             || $auth->can('ical')
@@ -605,22 +611,24 @@ function User_view(
                 ]),
             ]),
             div('row user-info', [
-                div('col-md-2', [
+                div('col-sm-6 col-lg-4 col-xl-3', [
                     config('enable_dect') && $user_source->contact->dect ?
                         heading(
                             icon('phone')
                             . ' <a href="tel:' . $user_source->contact->dect . '">'
                             . $user_source->contact->dect
-                            . '</a>'
+                            . '</a>',
+                            3
                         )
                         : '',
                     config('enable_mobile_show') && $user_source->contact->mobile ?
-                        $user_source->settings->mobile_show ?
+                        $admin_user_privilege || $user_source->settings->mobile_show ?
                             heading(
                                 icon('phone')
                                 . ' <a href="tel:' . $user_source->contact->mobile . '">'
                                 . $user_source->contact->mobile
-                                . '</a>'
+                                . '</a>',
+                                3
                             )
                             : ''
                         : '',
@@ -628,7 +636,8 @@ function User_view(
                         heading(
                             '<a href="' . page_link_to('/messages/' . $user_source->id) . '">'
                             . icon('envelope')
-                            . '</a>'
+                            . '</a>',
+                            3
                         )
                         : '',
                 ]),
@@ -674,7 +683,7 @@ function User_view_state($admin_user_privilege, $freeloader, $user_source)
         $state = User_view_state_user($user_source);
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-3', [
         heading(__('User state'), 4),
         join('<br>', $state),
     ]);
@@ -784,7 +793,7 @@ function User_angeltypes_render($user_angeltypes)
             . ($angeltype->pivot->supporter ? icon('patch-check') : '') . $angeltype->name
             . '</a>';
     }
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         heading(__('Angeltypes'), 4),
         join('<br>', $output),
     ]);
@@ -801,7 +810,7 @@ function User_groups_render($user_groups)
         $output[] = __($group->name);
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         '<h4>' . __('Rights') . '</h4>',
         join('<br>', $output),
     ]);
@@ -828,7 +837,7 @@ function User_oauth_render(User $user)
         return '';
     }
 
-    return div('col-md-2', [
+    return div('col-sm-6 col-lg-4 col-xl-3 col-xxl-2', [
         heading(__('OAuth'), 4),
         join('<br>', $output),
     ]);
@@ -852,7 +861,7 @@ function User_Nick_render($user, $plain = false)
     }
 
     return render_profile_link(
-        '<span class="icon-icon_angel"></span> ' . htmlspecialchars($user->displayName) . '</a>',
+        '<span class="bi bi-person-fill"></span> ' . htmlspecialchars($user->displayName) . '</a>',
         $user->id,
         ($user->state->arrived ? '' : 'text-muted')
     );
@@ -963,6 +972,20 @@ function render_user_dect_hint()
     $user = auth()->user();
     if ($user->state->arrived && config('enable_dect') && !$user->contact->dect) {
         $text = __('You need to specify a DECT phone number in your settings! If you don\'t have a DECT phone, just enter \'-\'.');
+        return render_profile_link($text, null, 'text-danger');
+    }
+
+    return null;
+}
+
+/**
+ * @return string|null
+ */
+function render_user_organization_hint()
+{
+    $user = auth()->user();
+    if (!$user->settings->organization_id) {
+        $text = __('Don\'t forget to select an organisation in your settings!');
         return render_profile_link($text, null, 'text-danger');
     }
 

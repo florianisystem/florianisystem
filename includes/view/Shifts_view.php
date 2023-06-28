@@ -177,7 +177,7 @@ function Shift_view(Shift $shift, ShiftType $shifttype, Room $room, $angeltypes_
             $admin_rooms ? button(room_link($room), icon('pin-map-fill') . $room->name) : '',
         ];
     }
-    $buttons[] = button(user_link(auth()->user()->id), '<span class="icon-icon_angel"></span> ' . __('My shifts'));
+    $buttons[] = button(user_link(auth()->user()->id), '<span class="bi bi-person-fill"></span> ' . __('My shifts'));
     $content[] = buttons($buttons);
 
     $content[] = Shift_view_header($shift, $room);

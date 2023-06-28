@@ -43,3 +43,7 @@ _vimrc_local.vim
 /package-lock.json
 /yarn-error.log
 /.yarn-cache
+
+# Monitoring
+/docker/*exporter
+/docker/grafana-agent-linux-amd64

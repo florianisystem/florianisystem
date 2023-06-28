@@ -8,6 +8,7 @@ use Engelsystem\Http\Validation\Rules\Username;
 use Engelsystem\Models\AngelType;
 use Engelsystem\Models\Group;
 use Engelsystem\Models\OAuth;
+use Engelsystem\Models\Organization;
 use Engelsystem\Models\User\Contact;
 use Engelsystem\Models\User\PersonalData;
 use Engelsystem\Models\User\Settings;
@@ -68,6 +69,16 @@ function guest_register()
     $password_hash = '';
     $selected_angel_types = [];
     $planned_arrival_date = null;
+    $organization = null;
+    $gdpr = false;
+
+    //$organizations = [ 1 => 'FF Leobersdorf', 2 => 'FF Sollenau', 3 => 'FF Kottingbrunn'];
+    /** @var Organization[]|Collection $organizations_source */
+    $organizations_source = Organization::all(['id', 'name']);
+    $organizations = [];
+    foreach ($organizations_source as $value) {
+        $organizations[$value['id']] = $value['name'];
+    }
 
     /** @var AngelType[]|Collection $angel_types_source */
     $angel_types_source = AngelType::all();
@@ -182,6 +193,11 @@ function guest_register()
             }
         }
 
+        if ($request->has('organization') && is_numeric($request->input('organization')) &&
+            isset($organizations[$request->input('organization')])) {
+            $organization = $request->input('organization');
+        }
+
         if ($enable_password && $request->has('password') && strlen($request->postData('password')) >= $min_password_length) {
             if ($request->postData('password') != $request->postData('password2')) {
                 $valid = false;
@@ -237,6 +253,13 @@ function guest_register()
             $mobile = strip_request_item('mobile');
         }
 
+        if ($request->has('gdpr')) {
+            $gdpr = true;
+        } else {
+            $valid = false;
+            error(__('registration.gdpr.required'));
+        }
+
         if ($valid) {
             // Safeguard against partially created user data
             $db->beginTransaction();
@@ -272,6 +295,7 @@ function guest_register()
             $settings = new Settings([
                 'language'        => $session->get('locale'),
                 'theme'           => config('theme'),
+                'organization_id' => $organization,
                 'email_human'     => $email_by_human_allowed,
                 'email_messages'  => $email_messages,
                 'email_goody'     => $email_goody,
@@ -393,142 +417,167 @@ function guest_register()
         msg(),
         form([
             div('row', [
-                div('col', [
-                    form_text(
-                        'username',
-                        __('Nick') . ' ' . entry_required(),
-                        $nick,
-                        false,
-                        24,
-                        'nickname'
-                    ),
-                    form_info(
-                        '',
-                        __('Use up to 24 letters, numbers or connecting punctuations for your nickname.')
-                    ),
+                div('col-lg-8 col-xxl-7', [
+                    div('row', [
+                        div($enable_pronoun ? 'col-md-6' : 'col', [
+                            form_text(
+                                'username',
+                                __('Nick') . ' ' . entry_required(),
+                                $nick,
+                                false,
+                                24,
+                                'nickname'
+                            ),
+                            form_info(
+                                '',
+                                __('Use up to 24 letters, numbers or connecting punctuations for your nickname.')
+                            ),
+                        ]),
+
+                        $enable_pronoun ? div('col-md-6', [
+                            form_text('pronoun', __('Pronoun'), $pronoun, false, 15),
+                        ]) : '',
+                    ]),
+
+                    $enable_user_name ? div('row', [
+                        div('col-sm-6', [
+                            form_text('prename', __('First name'), $preName, false, 64, 'given-name'),
+                        ]),
+                        div('col-sm-6', [
+                            form_text('lastname', __('Last name'), $lastName, false, 64, 'family-name'),
+                        ]),
+                    ]) : '',
+
+                    div('row', [
+                        div('col-sm-6', [
+                            form_email(
+                                'email',
+                                __('E-Mail') . ' ' . entry_required(),
+                                $email,
+                                false,
+                                'email',
+                                254
+                            ),
+                            form_checkbox(
+                                'email_shiftinfo',
+                                __(
+                                    'The %s is allowed to send me an email (e.g. when my shifts change)',
+                                    [config('app_name')]
+                                ),
+                                $email_shiftinfo
+                            ),
+                            form_checkbox(
+                                'email_news',
+                                __('Notify me of new news'),
+                                $email_news
+                            ),
+                            form_checkbox(
+                                'email_messages',
+                                __('settings.profile.email_messages'),
+                                $email_messages
+                            ),
+                            form_checkbox(
+                                'email_by_human_allowed',
+                                __('Allow heaven angels to contact you by e-mail.'),
+                                $email_by_human_allowed
+                            ),
+                            // $goodie_enabled ?
+                            //     form_checkbox(
+                            //         'email_goody',
+                            //         __('To receive vouchers, give consent that nick, email address, worked hours and shirt size will be stored until the next similar event.')
+                            //         . (config('privacy_email') ? ' ' . __('To withdraw your approval, send an email to <a href="mailto:%s">%1$s</a>.', [config('privacy_email')]) : ''),
+                            //         $email_goody
+                            //     ) : '',
+                        ]),
+
+                        div('col-sm-6', [
+                            $enable_dect ? form_text('dect', __('DECT'), $dect, false, 40, 'tel-local') : '',
+
+                            form_text('mobile', __('Mobile'), $mobile, false, 40, 'tel-national'),
+                            $enable_mobile_show ? form_checkbox(
+                                'mobile_show',
+                                __('Show mobile number to other users to contact me'),
+                                $mobile_show
+                            ) : '',
+                        ]),
+                    ]),
+
+                    $enable_password ? div('row', [
+                        div('col-sm-6', [
+                            form_password('password', __('Password') . ' ' . entry_required(), 'new-password'),
+                        ]),
+                        div('col-sm-6', [
+                            form_password('password2', __('Confirm password') . ' ' . entry_required(), 'new-password'),
+                        ]),
+                    ]) : '',
+
+                    div('row', [
+                        $enable_planned_arrival ? div('col-sm-6', [
+                            form_date(
+                                'planned_arrival_date',
+                                __('Planned date of arrival') . ' ' . entry_required(),
+                                $planned_arrival_date,
+                                $buildup_start_date,
+                                $teardown_end_date
+                            ),
+                        ]) : '',
+
+                        div('col-sm-6', [
+                            $goodie_tshirt ? form_select(
+                                'tshirt_size',
+                                __('Shirt size') . ' ' . entry_required(),
+                                $tshirt_sizes,
+                                $tshirt_size,
+                                __('Please select...')
+                            ) : '',
+                        ]),
+                    ]),
+
+                    div('row', [
+                        div('col-sm-6', [
+                            form_select(
+                                'organization',
+                                __('Organization'),
+                                $organizations,
+                                $organization,
+                                __('Please select...')
+                            ),
+                            form_info(
+                                '',
+                                __('If your organization is not listed here, please contact the event organizer to add your organization. You can also set this later in your settings.')
+                            ),
+                        ]),
+                        div('col-sm-6', [
+                            form_checkbox(
+                                'gdpr',
+                                __('registration.gdpr'),
+                                $gdpr
+                            ),
+                        ]),
+                    ]),
                 ]),
 
-                $enable_pronoun ? div('col', [
-                    form_text('pronoun', __('Pronoun'), $pronoun, false, 15),
-                ]) : '',
+                div('col-lg-4', [
+                    div('row', [
+                        div('col', [
+                            form_checkboxes(
+                                'angel_types',
+                                __('What do you want to do?') . sprintf(
+                                    ' (<a href="%s">%s</a>)',
+                                    url('/angeltypes/about'),
+                                    __('Description of job types')
+                                ),
+                                $angel_types,
+                                [],
+                            ),
+                            form_info(
+                                '',
+                                __('Some angel types have to be confirmed later by a supporter at an introduction meeting. You can change your selection in the options section.')
+                            ),
+                        ]),
+                    ]),
+                ]),
             ]),
-
-            $enable_user_name ? div('row', [
-                div('col', [
-                    form_text('prename', __('First name'), $preName, false, 64, 'given-name'),
-                ]),
-                div('col', [
-                    form_text('lastname', __('Last name'), $lastName, false, 64, 'family-name'),
-                ]),
-            ]) : '',
-
-            div('row', [
-                div('col', [
-                    form_email(
-                        'email',
-                        __('E-Mail') . ' ' . entry_required(),
-                        $email,
-                        false,
-                        'email',
-                        254
-                    ),
-                    form_checkbox(
-                        'email_shiftinfo',
-                        __(
-                            'settings.profile.email_shiftinfo',
-                            [config('app_name')]
-                        ),
-                        $email_shiftinfo
-                    ),
-                    form_checkbox(
-                        'email_news',
-                        __('Notify me of new news'),
-                        $email_news
-                    ),
-                    form_checkbox(
-                        'email_messages',
-                        __('settings.profile.email_messages'),
-                        $email_messages
-                    ),
-                    form_checkbox(
-                        'email_by_human_allowed',
-                        __('Allow heaven angels to contact you by e-mail.'),
-                        $email_by_human_allowed
-                    ),
-                    $goodie_enabled ?
-                        form_checkbox(
-                            'email_goody',
-                            __('To receive vouchers, give consent that nick, email address, worked hours and shirt size will be stored until the next similar event.')
-                            . (config('privacy_email') ? ' ' . __('To withdraw your approval, send an email to <a href="mailto:%s">%1$s</a>.', [config('privacy_email')]) : ''),
-                            $email_goody
-                        ) : '',
-                ]),
-
-                $enable_dect ? div('col', [
-                    form_text('dect', __('DECT'), $dect, false, 40, 'tel-local'),
-                ]) : '',
-
-                div('col', [
-                    form_text('mobile', __('Mobile'), $mobile, false, 40, 'tel-national'),
-                    $enable_mobile_show ? form_checkbox(
-                        'mobile_show',
-                        __('Show mobile number to other users to contact me'),
-                        $mobile_show
-                    ) : '',
-                ]),
-            ]),
-
-            div('row', [
-                $enable_password ? div('col', [
-                    form_password('password', __('Password') . ' ' . entry_required(), 'new-password'),
-                ]) : '',
-
-                $enable_planned_arrival ? div('col', [
-                    form_date(
-                        'planned_arrival_date',
-                        __('Planned date of arrival') . ' ' . entry_required(),
-                        $planned_arrival_date,
-                        $buildup_start_date,
-                        $teardown_end_date
-                    ),
-                ]) : '',
-            ]),
-
-            div('row', [
-                $enable_password ? div('col', [
-                    form_password('password2', __('Confirm password') . ' ' . entry_required(), 'new-password'),
-                ]) : '',
-
-                div('col', [
-                    $goodie_tshirt ? form_select(
-                        'tshirt_size',
-                        __('Shirt size') . ' ' . entry_required(),
-                        $tshirt_sizes,
-                        $tshirt_size,
-                        __('form.select_placeholder')
-                    ) : '',
-                ]),
-            ]),
-
-            div('row', [
-                div('col', [
-                    form_checkboxes(
-                        'angel_types',
-                        __('What do you want to do?') . sprintf(
-                            ' (<a href="%s">%s</a>)',
-                            url('/angeltypes/about'),
-                            __('Description of job types')
-                        ),
-                        $angel_types,
-                        $selected_angel_types
-                    ),
-                    form_info(
-                        '',
-                        __('Some angel types have to be confirmed later by a supporter at an introduction meeting. You can change your selection in the options section.')
-                    ),
-                ]),
-            ]),
-
             form_submit('submit', __('Register')),
         ]),
     ]);

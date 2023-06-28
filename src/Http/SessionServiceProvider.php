@@ -58,9 +58,14 @@ class SessionServiceProvider extends ServiceProvider
 
         return $this->app->make(NativeSessionStorage::class, [
             'options' => [
-                'cookie_httponly' => true,
                 'name'            => $sessionConfig['name'],
                 'cookie_lifetime' => (int) ($sessionConfig['lifetime'] * 24 * 60 * 60),
+                // 'cookie_domain'   => $config->get('url') ?: '',
+                // 'cookie_path'     => '/',
+                'cookie_httponly' => true,
+                'cookie_samesite' => 'Strict',
+                'cookie_secure'   => true,
+                'use_strict_mode' => true,
             ],
             'handler' => $handler,
         ]);

@@ -22,6 +22,7 @@ $custom-colors: (
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 $form-label-font-weight: $font-weight-bold;
+$border-color: darken($border-color, 10%);
 
 @import '~bootstrap/scss/utilities';
 
@@ -30,6 +31,7 @@ $form-label-font-weight: $font-weight-bold;
 @import '~bootstrap/scss/type';
 @import '~bootstrap/scss/containers';
 @import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/accordion';
 @import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/buttons';

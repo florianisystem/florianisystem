@@ -52,8 +52,8 @@ msgstr ""
 msgid "Authentication expired"
 msgstr "Autorisierung ist abgelaufen"
 
-msgid "The provided CSRF token is invalid or has expired"
-msgstr "Das angegebene CSRF Token ist ungültig oder abgelaufen"
+msgid "The provided CSRF token is invalid or has expired. Please try again."
+msgstr "Das angegebene CSRF Token ist ungültig oder abgelaufen. Bitte nochmals versuchen."
 
 msgid "Y-m-d"
 msgstr "d.m.Y"
@@ -96,7 +96,7 @@ msgstr ""
 
 msgid "credits.credit"
 msgstr ""
-"Das ursprüngliche Engelsystem wurde entwickelt von [cookie](https://github."
+"Das ursprüngliche Florianisystem wurde entwickelt von [cookie](https://github."
 "com/cookieBerlin/engelsystem). Danach wurde es von [msquare](https://"
 "notrademark.de) (Maintainer) und [MyIgel](https://myigel.name) völlig "
 "überarbeitet und verbessert."
@@ -104,7 +104,7 @@ msgstr ""
 msgid "credits.contributors"
 msgstr ""
 "Eine vollständige Liste der Mitwirkenden findest Du [auf GitHub](https://"
-"github.com/engelsystem/engelsystem/graphs/contributors)."
+"github.com/florianisystem/florianisystem/graphs/contributors)."
 
 msgid "Welcome to the %s!"
 msgstr "Willkommen beim %s!"
@@ -177,13 +177,16 @@ msgid "Recover"
 msgstr "Wiederherstellen"
 
 msgid "Angeltypes"
-msgstr "Engeltypen"
+msgstr "Aufgabenbereiche"
+
+msgid "Add Angeltype"
+msgstr "Aufgabenbereich hinzufügen"
 
 msgid "Angeltype %s deleted."
-msgstr "Engeltyp %s gelöscht."
+msgstr "Aufgabenbereich %s gelöscht."
 
 msgid "Delete angeltype %s"
-msgstr "Lösche Engeltyp %s"
+msgstr "Lösche Aufgabenbereich %s"
 
 msgid "Please check the name. Maybe it already exists."
 msgstr "Bitte überprüfe den Namen. Vielleicht ist er bereits vergeben."
@@ -192,7 +195,7 @@ msgid "Edit %s"
 msgstr "%s bearbeiten"
 
 msgid "Team %s"
-msgstr "Team %s"
+msgstr "Aufgabenbereich %s"
 
 msgid "view"
 msgstr "ansehen"
@@ -210,7 +213,10 @@ msgid "join"
 msgstr "mitmachen"
 
 msgid "Angeltype doesn't exist . "
-msgstr "Engeltyp existiert nicht."
+msgstr "Aufgabenbereich existiert nicht."
+
+msgid "Angel type saved."
+msgstr "Aufgabenbereich gespeichert."
 
 msgid "Event config"
 msgstr "Event Einstellungen"
@@ -249,13 +255,13 @@ msgid "%s has been subscribed to the shift."
 msgstr "%s wurde in die Schicht eingetragen."
 
 msgid "User is not in angeltype."
-msgstr "User ist nicht im Engeltyp."
+msgstr "User ist nicht im Aufgabenbereich."
 
 msgid "This shift is already occupied."
 msgstr "Die Schicht ist schon voll."
 
 msgid "You need be accepted member of the angeltype."
-msgstr "Du musst bestätigtes Mitglied des Engeltyps sein."
+msgstr "Du musst bestätigtes Mitglied des Aufgabenbereichs sein."
 
 msgid "This shift collides with one of your shifts."
 msgstr "Diese Schicht kollidiert mit deinen Schichten."
@@ -283,7 +289,7 @@ msgid ""
 "supporter or heaven to do so."
 msgstr ""
 "Du darfst diesen Schichteintrag nicht entfernen. Falls notwendig, frage "
-"deinen Supporter oder im Himmel danach."
+"deinen Supporter oder im Support danach."
 
 msgid "Shift entry removed."
 msgstr "Schichteintrag gelöscht."
@@ -294,7 +300,7 @@ msgstr ""
 "Dadurch werden einige Änderungen beim nächsten Import überschrieben."
 
 msgid "Please select a room."
-msgstr "Bitte einen Raum auswählen."
+msgstr "Bitte einen Ort auswählen."
 
 msgid "Please select a shifttype."
 msgstr "Bitte einen Schichttyp wählen."
@@ -309,7 +315,7 @@ msgid "The ending time has to be after the starting time."
 msgstr "Die Endzeit muss nach der Startzeit liegen."
 
 msgid "Please check your input for needed angels of type %s."
-msgstr "Bitte prüfe deine Eingabe für benötigte Engel des Typs %s."
+msgstr "Bitte prüfe deine Eingabe für benötigte Helfer des Typs %s."
 
 msgid "Shift updated."
 msgstr "Schicht aktualisiert."
@@ -324,7 +330,7 @@ msgid "Title"
 msgstr "Titel"
 
 msgid "Room:"
-msgstr "Raum:"
+msgstr "Ort:"
 
 msgid "Start:"
 msgstr "Start:"
@@ -333,7 +339,7 @@ msgid "End:"
 msgstr "Ende:"
 
 msgid "Needed angels"
-msgstr "Benötigte Engel"
+msgstr "Benötigte Helfer"
 
 msgid "Shift deleted."
 msgstr "Schicht gelöscht."
@@ -379,56 +385,56 @@ msgstr "Schichttypen"
 
 msgid "There is %d unconfirmed angeltype."
 msgid_plural "There are %d unconfirmed angeltypes."
-msgstr[0] "Es gibt %d nicht freigeschalteten Engeltypen!"
-msgstr[1] "Es gibt %d nicht freigeschaltete Engeltypen!"
+msgstr[0] "Es gibt %d nicht freigeschalteten Aufgabenbereiche!"
+msgstr[1] "Es gibt %d nicht freigeschaltete Aufgabenbereiche!"
 
 msgid "Angel types which need approvals:"
-msgstr "Engeltypen die bestätigt werden müssen:"
+msgstr "Aufgabenbereiche die bestätigt werden müssen:"
 
 msgid "Angeltype doesn't exist."
-msgstr "Engeltyp existiert nicht."
+msgstr "Aufgabenbereich existiert nicht."
 
 msgid "You are not allowed to delete all users for this angeltype."
-msgstr "Du darfst nicht alle Benutzer von diesem Engeltyp entfernen."
+msgstr "Du darfst nicht alle Benutzer von diesem Aufgabenbereich entfernen."
 
 msgid "Denied all users for angeltype %s."
-msgstr "Alle Benutzer mit Engeltyp %s abgelehnt."
+msgstr "Alle Benutzer mit Aufgabenbereich %s abgelehnt."
 
 msgid "Deny all users"
 msgstr "Alle Benutzer ablehnen"
 
 msgid "You are not allowed to confirm all users for this angeltype."
-msgstr "Du darfst nicht alle Benutzer für diesen Engeltyp freischalten."
+msgstr "Du darfst nicht alle Benutzer für diesen Aufgabenbereich freischalten."
 
 msgid "Confirmed all users for angeltype %s."
-msgstr "Alle Benutzer für Engeltyp %s freigeschaltet."
+msgstr "Alle Benutzer für Aufgabenbereich %s freigeschaltet."
 
 msgid "Confirm all users"
 msgstr "Alle Benutzer bestätigen"
 
 msgid "User angeltype doesn't exist."
-msgstr "Benutzer-Engeltype existiert nicht."
+msgstr "Benutzer-Aufgabenbereich existiert nicht."
 
 msgid "You are not allowed to confirm this users angeltype."
-msgstr "Du darfst diesen Benutzer nicht für diesen Engeltyp freischalten."
+msgstr "Du darfst diesen Benutzer nicht für diesen Aufgabenbereich freischalten."
 
 msgid "User doesn't exist."
 msgstr "Benutzer existiert nicht."
 
 msgid "%s confirmed for angeltype %s."
-msgstr "%s für Engeltyp %s freigeschaltet."
+msgstr "%s für Aufgabenbereich %s freigeschaltet."
 
 msgid "Confirm angeltype for user"
-msgstr "Engeltyp für Benutzer bestätigen"
+msgstr "Aufgabenbereich für Benutzer bestätigen"
 
 msgid "You are not allowed to delete this users angeltype."
-msgstr "Du darfst diesen Benutzer nicht von diesem Engeltyp entfernen."
+msgstr "Du darfst diesen Benutzer nicht von diesem Aufgabenbereich entfernen."
 
 msgid "User %s removed from %s."
 msgstr "Benutzer %s von %s entfernt."
 
 msgid "Remove angeltype"
-msgstr "Engeltyp löschen"
+msgstr "Aufgabenbereich löschen"
 
 msgid "You are not allowed to set supporter rights."
 msgstr "Du darfst keine Supporterrechte bearbeiten."
@@ -452,7 +458,7 @@ msgid "User %s added to %s."
 msgstr "Benutzer %s zu %s hinzugefügt."
 
 msgid "Add user to angeltype"
-msgstr "Benutzer zu Engeltyp hinzufügen"
+msgstr "Benutzer zu Aufgabenbereich hinzufügen"
 
 msgid "You are already a %s."
 msgstr "Du bist bereits %s."
@@ -467,7 +473,7 @@ msgid ""
 "You joined an angeltype which requires a driving license. Please edit your "
 "driving license information here: %s."
 msgstr ""
-"Du bist einem Engeltypen beigetreten, der Führerschein-Infos benötigt. Bitte "
+"Du bist einem Aufgabenbereiche beigetreten, der Führerschein-Infos benötigt. Bitte "
 "trage Deine Führerschein-Infos hier ein: %s."
 
 msgid "driving license information"
@@ -492,7 +498,7 @@ msgid "auth.password.error"
 msgstr "Dein Passwort stimmt nicht. Bitte probiere es nochmal."
 
 msgid "User deleted."
-msgstr "Engel gelöscht."
+msgstr "Helfer gelöscht."
 
 msgid "Delete %s"
 msgstr "%s löschen"
@@ -579,26 +585,26 @@ msgid ""
 "account deletion, please contact heaven."
 msgstr ""
 "Dein %s-Konto wurde gelöscht. Wenn Du dazu Fragen hast, kontaktiere bitte "
-"den Himmel."
+"den Support."
 
 msgid "m/d/Y h:i a"
 msgstr "d.m.Y H:i"
 
 msgid "Active angels"
-msgstr "Aktive Engel"
+msgstr "Aktive Helfer"
 
 msgid ""
 "At least %s angels are forced to be active. The number has to be greater."
 msgstr ""
-"Mindestens %s Engel werden als aktiv gekennzeichnet. Die Nummer muss größer "
+"Mindestens %s Helfer werden als aktiv gekennzeichnet. Die Nummer muss größer "
 "sein."
 
 msgid "Please enter a number of angels to be marked as active."
 msgstr ""
-"Bitte gib eine Anzahl an Engeln ein, die als Aktiv markiert werden sollen."
+"Bitte gib eine Anzahl an Helfern ein, die als Aktiv markiert werden sollen."
 
 msgid "Marked angels."
-msgstr "Engel wurden markiert."
+msgstr "Helfer wurden markiert."
 
 msgid "back"
 msgstr "zurück"
@@ -607,19 +613,19 @@ msgid "apply"
 msgstr "anwenden"
 
 msgid "Angel has been marked as active."
-msgstr "Engel wurde als aktiv markiert."
+msgstr "Helfer wurde als aktiv markiert."
 
 msgid "Angel not found."
-msgstr "Engel nicht gefunden."
+msgstr "Helfer nicht gefunden."
 
 msgid "Angel has been marked as not active."
-msgstr "Engel wurde als nicht aktiv markiert."
+msgstr "Helfer wurde als nicht aktiv markiert."
 
 msgid "Angel has got a t-shirt."
-msgstr "Engel hat ein T-Shirt bekommen."
+msgstr "Helfer hat ein T-Shirt bekommen."
 
 msgid "Angel has got no t-shirt."
-msgstr "Engel hat kein T-Shirt bekommen."
+msgstr "Helfer hat kein T-Shirt bekommen."
 
 msgid "set active"
 msgstr "setze aktiv"
@@ -637,7 +643,7 @@ msgid "Sum"
 msgstr "Summe"
 
 msgid "Search angel:"
-msgstr "Suche Engel:"
+msgstr "Suche Helfer:"
 
 msgid "Show all shifts"
 msgstr "Alle Schichten anzeigen"
@@ -646,13 +652,13 @@ msgid "Search"
 msgstr "Suche"
 
 msgid "How much angels should be active?"
-msgstr "Wie viele Engel sollten aktiv sein?"
+msgstr "Wie viele Helfer sollten aktiv sein?"
 
 msgid "Preview"
 msgstr "Vorschau"
 
 msgid "Nickname"
-msgstr "Nick"
+msgstr "Benutzername"
 
 msgid "Size"
 msgstr "Größe"
@@ -678,17 +684,23 @@ msgstr "T-Shirt?"
 msgid "Shirt statistic"
 msgstr "T-Shirt Statistik"
 
+msgid "Requested shirts"
+msgstr "Angefragte T-Shirts"
+
+msgid "Requested shirts (with shifts)"
+msgstr "Angefragte T-Shirts (mit Schichten)"
+
 msgid "Given shirts"
 msgstr "Ausgegebene T-Shirts"
 
 msgid "Arrive angels"
-msgstr "Ankommende Engel"
+msgstr "Ankommende Helfer"
 
 msgid "Reset done. Angel has not arrived."
-msgstr "Zurückgesetzt. Engel ist nicht angekommen."
+msgstr "Zurückgesetzt. Helfer ist nicht angekommen."
 
 msgid "Angel has been marked as arrived."
-msgstr "Engel wurde als angekommen markiert."
+msgstr "Helfer wurde als angekommen markiert."
 
 msgid "reset"
 msgstr "zurücksetzen"
@@ -727,16 +739,16 @@ msgid "Planned departure statistics"
 msgstr "Geplante Abreise-Statistik"
 
 msgid "Free angels"
-msgstr "Freie Engel"
+msgstr "Freie Helfer"
 
 msgid "Alle"
 msgstr "All"
 
 msgid "Angeltype"
-msgstr "Engeltyp"
+msgstr "Aufgabenbereich"
 
 msgid "Nick"
-msgstr "Nick"
+msgstr "Benutzername"
 
 msgid "Next shift"
 msgstr "Nächste Schicht"
@@ -745,7 +757,7 @@ msgid "Last shift"
 msgstr "Letzte Schicht"
 
 msgid "DECT"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "Grouprights"
 msgstr "Gruppenrechte"
@@ -800,7 +812,7 @@ msgid ""
 "This import will create/update/delete rooms and shifts by given FRAB-export "
 "file. The needed file format is xcal."
 msgstr ""
-"Dieser Import erzeugt, ändert und löscht Räume und Schichten anhand einer "
+"Dieser Import erzeugt, ändert und löscht Orte und Schichten anhand einer "
 "FRAB-Export Datei. Das benötigte Format ist xcal."
 
 msgid "Add minutes to start"
@@ -816,10 +828,10 @@ msgid "Missing import file."
 msgstr "Import-Datei nicht vorhanden."
 
 msgid "Rooms to create"
-msgstr "Anzulegende Räume"
+msgstr "Anzulegende Orte"
 
 msgid "Rooms to delete"
-msgstr "Zu löschende Räume"
+msgstr "Zu löschende Orte"
 
 msgid "Shifts to create"
 msgstr "Anzulegende Schichten"
@@ -837,7 +849,7 @@ msgid "Shift type"
 msgstr "Schichttyp"
 
 msgid "Room"
-msgstr "Raum"
+msgstr "Ort"
 
 msgid "Shifts to update"
 msgstr "Zu aktualisierende Schichten"
@@ -882,23 +894,23 @@ msgid "Asked at"
 msgstr "Gefragt am"
 
 msgid "Rooms"
-msgstr "Räume"
+msgstr "Orte"
 
 msgid "This name is already in use."
 msgstr "Dieser Name ist bereits vergeben."
 
 msgid "Please enter needed angels for type %s."
-msgstr "Bitte gib die Anzahl der benötigten Engel vom Typ %s an."
+msgstr "Bitte gib die Anzahl der benötigten Helfer vom Typ %s an."
 
 msgid "Room saved."
-msgstr "Raum gespeichert."
+msgstr "Ort gespeichert."
 
 msgid "Map URL"
 msgstr "Karten URL"
 
 msgid "The map url is used to display an iframe on the room page."
 msgstr ""
-"Die Karten URL wird benutzt um auf der Raum-Seite ein iframe anzuzeigen."
+"Die Karten URL wird benutzt um auf der Ort-Seite ein iframe anzuzeigen."
 
 msgid "Description"
 msgstr "Beschreibung"
@@ -907,13 +919,13 @@ msgid "Please use markdown for the description."
 msgstr "Bitte benutze Markdown für die Beschreibung."
 
 msgid "Needed angels:"
-msgstr "Benötigte Engel:"
+msgstr "Benötigte Helfer:"
 
 msgid "Room %s deleted."
-msgstr "Raum %s gelöscht."
+msgstr "Ort %s gelöscht."
 
 msgid "Do you want to delete room %s?"
-msgstr "Möchest Du den Raum %s wirklich löschen?"
+msgstr "Möchest Du den Ort %s wirklich löschen?"
 
 msgid "add"
 msgstr "Neu"
@@ -923,6 +935,9 @@ msgstr "Karte"
 
 msgid "Create shifts"
 msgstr "Schichten erstellen"
+
+msgid "Shifts created."
+msgstr "Schichten erstellt."
 
 msgid "Additional description"
 msgstr "Zusätzliche Beschreibung"
@@ -952,16 +967,16 @@ msgid "Please select a mode."
 msgstr "Bitte einen Modus auswählen."
 
 msgid "Please check the needed angels for team %s."
-msgstr "Bitte gib die Anzahl der benötigten Engel vom Team %s an."
+msgstr "Bitte gib die Anzahl der benötigten Helfer vom Aufgabenbereich %s an."
 
 msgid "There are 0 angels needed. Please enter the amounts of needed angels."
-msgstr "Es werden 0 Engel benötigt. Bitte ändere das."
+msgstr "Es werden 0 Helfer benötigt. Bitte ändere das."
 
 msgid "Please select a mode for needed angels."
-msgstr "Bitte wähle einen Modus für benötigte Engel."
+msgstr "Bitte wähle einen Modus für benötigte Helfer."
 
 msgid "Please select needed angels."
-msgstr "Bitte wähle benötigte Engel."
+msgstr "Bitte wähle benötigte Helfer."
 
 msgid "Time and location"
 msgstr "Zeit und Ort"
@@ -988,13 +1003,13 @@ msgid "Create a shift over midnight."
 msgstr ""
 
 msgid "Take needed angels from room settings"
-msgstr "Übernehme benötigte Engel von den Raum-Einstellungen"
+msgstr "Übernehme benötigte Helfer von den Ort-Einstellungen"
 
 msgid "The following angels are needed"
-msgstr "Die folgenden Engel werden benötigt"
+msgstr "Die folgenden Helfer werden benötigt"
 
 msgid "All Angels"
-msgstr "Alle Engel"
+msgstr "Helferliste"
 
 msgid "This user does not exist."
 msgstr "Benutzer existiert nicht."
@@ -1012,22 +1027,22 @@ msgid ""
 "Please visit the angeltypes page or the users profile to manage users "
 "angeltypes."
 msgstr ""
-"Bitte benutze die Engeltypen-Seite um die Engeltypen des Users zu verwalten."
+"Bitte benutze die Aufgabenbereiche-Seite um die Aufgabenbereiche des Users zu verwalten."
 
 msgid "Edit user"
 msgstr "User bearbeiten"
 
 msgid "Please enter a valid nick."
-msgstr "Gib bitte einen erlaubten Nick an."
+msgstr "Gib bitte einen erlaubten Benutzernamen an."
 
 msgid "Use up to 24 letters, numbers or connecting punctuations for your nickname."
-msgstr "Verwende bis zu 24 Buchstaben, Zahlen oder verbindende Schriftzeichen (.-_) für deinen Nick."
+msgstr "Verwende bis zu 24 Buchstaben, Zahlen oder verbindende Schriftzeichen (.-_) für deinen Benutzernamen."
 
 msgid "Your nick \"%s\" already exists."
-msgstr "Der Nick \"%s\" existiert bereits."
+msgstr "Der Benutzername \"%s\" existiert bereits."
 
 msgid "Please enter a nickname."
-msgstr "Gib bitte einen Nick an."
+msgstr "Gib bitte einen Benutzernamen an."
 
 msgid "E-mail address is not correct."
 msgstr "Die E-Mail Adresse ist nicht in Ordnung."
@@ -1052,28 +1067,28 @@ msgstr ""
 "und vor dem Abbauende liegen."
 
 msgid "For dect numbers are only 40 digits allowed."
-msgstr "Die DECT Nummer darf nur 40 Zeichen lang sein."
+msgstr "Die Telefonnummer darf nur 40 Zeichen lang sein."
 
 msgid "Angel registration successful!"
-msgstr "Engel-Registrierung erfolgreich!"
+msgstr "Helfer-Registrierung erfolgreich!"
 
 msgid ""
 "By completing this form you're registering as a Chaos-Angel. This script "
 "will create you an account in the angel task scheduler."
 msgstr ""
-"Mit diesem Formular registrierst Du Dich als Engel. Du bekommst ein Konto in "
-"der Engel-Aufgabenverwaltung."
+"Mit diesem Formular registrierst Du Dich als Helfer. Du bekommst ein Konto in "
+"der Helfer-Aufgabenverwaltung."
 
 msgid "Notify me of new news"
 msgstr "Benachrichtige mich bei neuen News"
 
 msgid "Allow heaven angels to contact you by e-mail."
-msgstr "Erlaube Himmel-Engeln dich per Mail zu kontaktieren."
+msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 
 msgid ""
 "To receive vouchers, give consent that nick, email address, worked hours and shirt size "
 "will be stored until the next similar event."
-msgstr "Um Voucher zu erhalten, stimme zu, dass Nick, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
+msgstr "Um Voucher zu erhalten, stimme zu, dass Benutzername, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
 "bis zum nächsten gleichartigen Event gespeichert werden."
 
 msgid "To withdraw your approval, send an email to <a href=\"mailto:%s\">%1$s</a>."
@@ -1085,6 +1100,16 @@ msgstr "Geplanter Ankunftstag"
 msgid "Shirt size"
 msgstr "T-Shirt Größe"
 
+msgid "Organization"
+msgstr "Organisation"
+
+msgid ""
+"If your organization is not listed here, please contact the event organizer to add your "
+"organization. You can also set this later in your settings."
+msgstr ""
+"Ist deine Organisation hier nicht aufgelistet, dann melde dich beim Veranstalter um auch deine "
+"Organisation eintragen zu lassen. Du kannst diese auch nachträglich in den Einstellungen setzen."
+
 msgid "What do you want to do?"
 msgstr "Was möchtest Du machen?"
 
@@ -1095,7 +1120,7 @@ msgid ""
 "Some angel types have to be confirmed later by a supporter at an "
 "introduction meeting. You can change your selection in the options section."
 msgstr ""
-"Engeltypen welche eine Einführung benötigen, werden bei einem Einführungstreffen von "
+"Aufgabenbereiche welche eine Einführung benötigen, werden bei einem Einführungstreffen von "
 "einem Supporter freigeschaltet. Du kannst Deine Auswahl später in den Einstellungen ändern."
 
 msgid "Mobile"
@@ -1126,7 +1151,7 @@ msgid "delete message"
 msgstr "Nachricht löschen"
 
 msgid "Hello %s, here can you leave messages for other angels"
-msgstr "Hallo %s, hier kannst Du anderen Engeln Nachrichten schreiben."
+msgstr "Hallo %s, hier kannst Du anderen Helfern Nachrichten schreiben."
 
 msgid "New"
 msgstr "Neu"
@@ -1182,7 +1207,7 @@ msgid "Meetings"
 msgstr "Treffen"
 
 msgid "Ask the Heaven"
-msgstr "Frag den Himmel"
+msgstr "Frag den Support"
 
 msgid "You question was saved."
 msgstr "Frage gespeichert."
@@ -1213,7 +1238,7 @@ msgid "Your password is to short (please use at least 6 characters)."
 msgstr "Dein Passwort ist zu kurz (Bitte mindestens 6 Zeichen nutzen)."
 
 msgid "The administration has not configured any rooms yet."
-msgstr "Die Administratoren habe noch keine Räume eingerichtet."
+msgstr "Die Administratoren habe noch keine Orte eingerichtet."
 
 msgid "The administration has not configured any shifts yet."
 msgstr "Die Administratoren haben noch keine Schichten angelegt."
@@ -1222,8 +1247,8 @@ msgid ""
 "The administration has not configured any angeltypes yet - or you are not "
 "subscribed to any angeltype."
 msgstr ""
-"Die Administratoren haben noch keine Engeltypen konfiguriert - oder Du hast "
-"noch keine Engeltypen ausgewählt."
+"Die Administratoren haben noch keine Aufgabenbereiche konfiguriert - oder Du hast "
+"noch keine Aufgabenbereiche ausgewählt."
 
 msgid "occupied"
 msgstr "belegt"
@@ -1241,7 +1266,7 @@ msgid ""
 "The tasks shown here are influenced by the angeltypes you joined already!"
 msgstr ""
 "Die Schichten, die hier angezeigt werden, sind von Deinen Einstellungen "
-"(Engeltypen/Aufgaben) abhängig!"
+"(Aufgabenbereiche/Aufgaben) abhängig!"
 
 msgid "Description of the jobs."
 msgstr "Beschreibung der Aufgaben."
@@ -1298,7 +1323,7 @@ msgid "Admin"
 msgstr "Admin"
 
 msgid "Manage rooms"
-msgstr "Verwalte Räume"
+msgstr "Verwalte Orte"
 
 msgid "No data found."
 msgstr "Nichts gefunden."
@@ -1313,7 +1338,7 @@ msgid "Member"
 msgstr "Mitglied"
 
 msgid "Do you want to delete angeltype %s?"
-msgstr "Möchtest Du den Engeltypen %s löschen?"
+msgstr "Möchtest Du den Aufgabenbereiche %s löschen?"
 
 msgid "cancel"
 msgstr "abbrechen"
@@ -1325,7 +1350,7 @@ msgid ""
 "Angel types which require introduction can only be used by an angel if "
 "enabled by a supporter (double opt-in)."
 msgstr ""
-"Engeltypen, welche eine Einführung benötigen, müssen von einem Supporter freigeschaltet werden "
+"Aufgabenbereiche, welche eine Einführung benötigen, müssen von einem Supporter freigeschaltet werden "
 "(double-opt-in)."
 
 msgid "No Self Sign Up allowed"
@@ -1350,14 +1375,14 @@ msgid ""
 "This angeltype requires a driver license. Please enter your driver license "
 "information!"
 msgstr ""
-"Dieser Engeltyp benötigt Führerschein-Infos. Bitte trage Deine Führerschein-"
+"Dieser Aufgabenbereich benötigt Führerschein-Infos. Bitte trage Deine Führerschein-"
 "Infos ein!"
 
 msgid ""
 "You are unconfirmed for this angeltype. Please go to the introduction for %s "
 "to get confirmed."
 msgstr ""
-"Du bist noch nicht für diesen Engeltyp bestätigt. Bitte gehe zur Einführung "
+"Du bist noch nicht für diesen Aufgabenbereich bestätigt. Bitte gehe zur Einführung "
 "für %s um bestätigt zu werden."
 
 msgid "confirm"
@@ -1409,7 +1434,7 @@ msgid "deny all"
 msgstr "Alle ablehnen"
 
 msgid "New angeltype"
-msgstr "Neuer Engeltyp"
+msgstr "Neuer Aufgabenbereich"
 
 msgid "Self Sign Up Allowed"
 msgstr "Selbst-Eintragen erlaubt"
@@ -1448,13 +1473,13 @@ msgid "Event end date"
 msgstr "Event Ende Datum"
 
 msgid "Angels needed in the next 3 hrs"
-msgstr "Benötigte Engel in den nächsten 3 Stunden"
+msgstr "Benötigte Helfer in den nächsten 3 Stunden"
 
 msgid "Angels needed for nightshifts"
-msgstr "Benötigte Engel für Nachtschichten"
+msgstr "Benötigte Helfer für Nachtschichten"
 
 msgid "Angels currently working"
-msgstr "Aktuell arbeitende Engel"
+msgstr "Aktuell arbeitende Helfer"
 
 msgid "Hours to be worked"
 msgstr "Noch zu schaffende Stunden"
@@ -1484,7 +1509,7 @@ msgid "Help needed"
 msgstr "Hilfe benötigt"
 
 msgid "Other angeltype needed / collides with my shifts"
-msgstr "Andere Engeltypen benötigt / kollidiert mit meinen Schichten"
+msgstr "Andere Aufgabenbereiche benötigt / kollidiert mit meinen Schichten"
 
 msgid "Shift is full"
 msgstr "Schicht ist voll"
@@ -1493,7 +1518,7 @@ msgid "Shift running/ended or you have not arrived"
 msgstr "Schicht läuft/vorbei oder du bist noch nicht angekommen"
 
 msgid "Add more angels"
-msgstr "Neue Engel hinzufügen"
+msgstr "Neue Helfer hinzufügen"
 
 msgid "%d helper needed"
 msgid_plural "%d helpers needed"
@@ -1555,7 +1580,7 @@ msgid "Edit shift entry"
 msgstr "Schichteintrag bearbeiten"
 
 msgid "Angel:"
-msgstr "Engel:"
+msgstr "Helfer:"
 
 msgid "Date, Duration:"
 msgstr "Termin, Dauer:"
@@ -1579,7 +1604,7 @@ msgid "Create shifttype"
 msgstr "Schichttyp erstellen"
 
 msgid "for team %s"
-msgstr "für Team %s"
+msgstr "für Aufgabenbereich %s"
 
 msgid "New shifttype"
 msgstr "Neuer Schichttyp"
@@ -1669,10 +1694,10 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Pronoun"
-msgstr "Pronomen"
+msgstr "Anrede"
 
 msgid "Will be shown on your profile page and in angel lists."
-msgstr "Wird auf deiner Profilseite und in Engellisten angezeigt."
+msgstr "Wird auf deiner Profilseite und in Helferlisten angezeigt."
 
 msgid "Here you can change your user details."
 msgstr "Hier kannst Du Deine Details ändern."
@@ -1681,23 +1706,23 @@ msgid "Planned date of departure"
 msgstr "Geplanter Abreisetag"
 
 msgid "You can manage your Angeltypes <a href=\"%s\">on the Angeltypes page</a>."
-msgstr "Du kannst deine Engeltypen <a href=\"%s\">auf der Engeltypen-Seite</a> verwalten."
+msgstr "Du kannst deine Aufgabenbereiche <a href=\"%s\">auf der Aufgabenbereiche-Seite</a> verwalten."
 
 msgid ""
 "Do you really want to delete the user including all his shifts and every "
 "other piece of his data?"
 msgstr ""
-"Möchtest Du wirklich den Engel inklusive aller seiner Schichten und allen "
+"Möchtest Du wirklich den Helfer inklusive aller seiner Schichten und allen "
 "anderen seiner Daten löschen?"
 
 msgid "Your password"
 msgstr "Dein Passwort"
 
 msgid "Angel can receive another %d vouchers."
-msgstr "Engel kann noch %d Gutscheine bekommen."
+msgstr "Helfer kann noch %d Gutscheine bekommen."
 
 msgid "Angel can receive another %d vouchers and is FA."
-msgstr "Engel kann noch %d Gutscheine bekommen und ist FA."
+msgstr "Helfer kann noch %d Gutscheine bekommen und ist FA."
 
 msgid "Number of vouchers given out"
 msgstr "Anzahl Gutscheine bekommen"
@@ -1794,7 +1819,7 @@ msgstr ""
 "einzutragen."
 
 msgid "User state"
-msgstr "Engelzustand"
+msgstr "Helferzustand"
 
 msgid "Not arrived"
 msgstr "Nicht angekommen"
@@ -1838,13 +1863,13 @@ msgid ""
 "heavens desk to be unlocked again."
 msgstr ""
 "Du hast mindestens %s Schichten geschwänzt. Schicht-Registrierung ist "
-"gesperrt. Bitte gehe zum Himmelsschreibtisch um wieder entsperrt zu werden."
+"gesperrt. Bitte gehe zum Supporterschreibtisch um wieder entsperrt zu werden."
 
 msgid ""
 "You are not marked as arrived. Please go to heaven's desk, get your angel "
 "badge and/or tell them that you arrived already."
 msgstr ""
-"Du bist nicht als angekommen markiert. Bitte gehe zur Himmelsverwaltung, "
+"Du bist nicht als angekommen markiert. Bitte gehe zur Supportverwaltung, "
 "hole Dein Badge ab und/oder erkläre ihnen, dass Du bereits angekommen bist."
 
 msgid "You need to specify a tshirt size in your settings!"
@@ -1854,43 +1879,46 @@ msgid ""
 "You need to specify a DECT phone number in your settings! If you don't have "
 "a DECT phone, just enter '-'."
 msgstr ""
-"Bitte eine DECT-Telefonnummer in den Einstellungen eingeben. Wenn du noch "
+"Bitte eine Telefonnummer in den Einstellungen eingeben. Wenn du noch "
 "keine Nummer hast, bitte einfach \"-\" angeben."
+
+msgid "Don't forget to select an organisation in your settings!"
+msgstr "Vergiss nicht in deinen Einstellungen eine Organistation auszuwählen."
 
 msgid ""
 "Here you can change the user entry. Under the item 'Arrived' the angel is marked as present, "
 "a yes at Active means that the angel was active."
 msgstr ""
-"Hier kannst du den Benutzer Eintrag ändern. Unter dem Punkt 'Angekommen' wird der Engel als anwesend markiert, "
-"ein Ja bei Aktiv bedeutet, dass der Engel aktiv war."
+"Hier kannst du den Benutzer Eintrag ändern. Unter dem Punkt 'Angekommen' wird der Helfer als anwesend markiert, "
+"ein Ja bei Aktiv bedeutet, dass der Helfer aktiv war."
 
 msgid ""
 "If the angel is active, it can claim a T-shirt. If T-shirt is set to 'Yes', the angel already got their T-shirt."
 msgstr ""
-"Ist der Engel Aktiv, hat er damit Anspruch auf ein T-Shirt. Wenn T-Shirt ein 'Ja' enthält, bedeutet dies, "
-"dass der Engel bereits sein T-Shirt erhalten hat."
+"Ist der Helfer Aktiv, hat er damit Anspruch auf ein T-Shirt. Wenn T-Shirt ein 'Ja' enthält, bedeutet dies, "
+"dass der Helfer bereits sein T-Shirt erhalten hat."
 
 msgid ""
 "If the angel was Active, this entitles him to a T-shirt. If T-shirt contains a 'Ja', "
 "it means that the angel has already received his T-shirt."
 msgstr ""
-"War der Engel Aktiv, hat er damit Anspruch auf ein T-Shirt. Wenn T-Shirt ein 'Ja' enthält, "
-"bedeutet dies, dass der Engel bereits sein T-Shirt erhalten hat."
+"War der Helfer Aktiv, hat er damit Anspruch auf ein T-Shirt. Wenn T-Shirt ein 'Ja' enthält, "
+"bedeutet dies, dass der Helfer bereits sein T-Shirt erhalten hat."
 
 msgid "Please visit the angeltypes page or the users profile to manage the users angeltypes."
-msgstr "Bitte besuche die Seite Engeltypen oder das Benutzerprofil, um die Engeltypen des Benutzers zu verwalten."
+msgstr "Bitte besuche die Seite Aufgabenbereiche oder das Benutzerprofil, um die Aufgabenbereiche des Benutzers zu verwalten."
 
 msgid "Here you can reset the password of this angel:"
-msgstr "Hier kannst du das Passwort für diesen Engel zurücksetzen:"
+msgstr "Hier kannst du das Passwort für diesen Helfer zurücksetzen:"
 
 msgid "Here you can define the user groups of the angel:"
-msgstr "Hier kannst du die Benutzergruppen des Engels definieren:"
+msgstr "Hier kannst du die Benutzergruppen des Helfers definieren:"
 
 msgid "User groups saved."
 msgstr "Benutzergruppen gespeichert."
 
 msgid "You cannot edit angels with more rights."
-msgstr "Du kannst keine Engel mit mehr Rechten bearbeiten."
+msgstr "Du kannst keine Helfer mit mehr Rechten bearbeiten."
 
 msgid "You cannot edit your own rights."
 msgstr "Du kannst deine eigenen Rechte nicht bearbeiten."
@@ -1908,14 +1936,20 @@ msgid "Number of shifts: %s"
 msgstr "Anzahl an Schichten: %s"
 
 msgid "If the angel is active, it can claim a goodie. If goodie is set to 'Yes', the angel already got their goodie."
-msgstr "Ist der Engel Aktiv, hat er damit Anspruch auf ein Goodie. Wenn Goodie ein 'Ja' enthält, bedeutet dies, "
-"dass der Engel bereits sein Goodie erhalten hat."
+msgstr "Ist der Helfer Aktiv, hat er damit Anspruch auf ein Goodie. Wenn Goodie ein 'Ja' enthält, bedeutet dies, "
+"dass der Helfer bereits sein Goodie erhalten hat."
 
 msgid "Goodie"
 msgstr "Goodie"
 
 msgid "Your goodie score"
 msgstr "Dein Goodie Score"
+
+msgid "Requested goodies"
+msgstr "Angefragte Goodies"
+
+msgid "Requested goodies (with shifts)"
+msgstr "Angefragte Goodies (mit Schichten)"
 
 msgid "Given goodies"
 msgstr "Ausgegebene Goodies"
@@ -1933,10 +1967,10 @@ msgid "Goodie?"
 msgstr "Goodie?"
 
 msgid "Angel has got a goodie."
-msgstr "Engel hat ein Goodie bekommen."
+msgstr "Helfer hat ein Goodie bekommen."
 
 msgid "Angel has got no goodie."
-msgstr "Engel hat kein Goodie bekommen."
+msgstr "Helfer hat kein Goodie bekommen."
 
 msgid "page.404.text"
 msgstr ""
@@ -1997,7 +2031,7 @@ msgstr "Aktualisiert am: %s"
 
 msgid "schedule.import.text"
 msgstr ""
-"Importe erstellen Räume und erstellen, aktualisieren und löschen Schichten anhand eines schedule.xml exportes."
+"Importe erstellen Orte und erstellen, aktualisieren und löschen Schichten anhand eines schedule.xml exportes."
 
 msgid "schedule.import.load.title"
 msgstr "Programm importieren: Vorschau"
@@ -2021,7 +2055,7 @@ msgid "schedule.minutes-after"
 msgstr "Minuten nach Talk ende hinzufügen"
 
 msgid "schedule.import.rooms.add"
-msgstr "Neue Räume"
+msgstr "Neue Orte"
 
 msgid "schedule.import.shifts.add"
 msgstr "Neue Schichten"
@@ -2045,7 +2079,7 @@ msgid "schedule.import.shift.title"
 msgstr "Titel"
 
 msgid "schedule.import.shift.room"
-msgstr "Raum"
+msgstr "Ort"
 
 msgid "shifts_history.schedule"
 msgstr "Programm: %s"
@@ -2123,13 +2157,13 @@ msgid "settings.profile.entry_required"
 msgstr "Pflichtfeld"
 
 msgid "settings.profile.nick"
-msgstr "Nick"
+msgstr "Benutzername"
 
 msgid "settings.profile.pronoun"
-msgstr "Pronomen"
+msgstr "Anrede"
 
 msgid "settings.profile.pronoun.info"
-msgstr "Wird auf deiner Profilseite und in Engellisten angezeigt."
+msgstr "Wird auf deiner Profilseite und in Helferlisten angezeigt."
 
 msgid "settings.profile.firstname"
 msgstr "Vorname"
@@ -2144,7 +2178,7 @@ msgid "settings.profile.planned_departure_date"
 msgstr "Geplanter Abreisetag"
 
 msgid "settings.profile.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "settings.profile.mobile"
 msgstr "Handy"
@@ -2165,10 +2199,10 @@ msgid "settings.profile.email_messages"
 msgstr "Benachrichtige mich bei neuen privaten Nachrichten."
 
 msgid "settings.profile.email_by_human_allowed"
-msgstr "Erlaube Himmel-Engeln dich per Mail zu kontaktieren."
+msgstr "Erlaube Support-Helfer dich per Mail zu kontaktieren."
 
 msgid "settings.profile.email_goody"
-msgstr "Um Voucher zu erhalten, stimme zu, dass Nick, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
+msgstr "Um Voucher zu erhalten, stimme zu, dass Benutzername, E-Mail-Adresse, geleistete Arbeit und Shirtgröße "
 "bis zum nächsten gleichartigen Event gespeichert werden."
 
 msgid "settings.profile.privacy"
@@ -2178,7 +2212,7 @@ msgid "settings.profile.shirt_size"
 msgstr "T-Shirt-Größe"
 
 msgid "settings.profile.angeltypes.info"
-msgstr "Du kannst deine Engeltypen <a href=\"%s\">auf der Engeltypen-Seite</a> verwalten."
+msgstr "Du kannst deine Aufgabenbereiche <a href=\"%s\">auf der Aufgabenbereiche-Seite</a> verwalten."
 
 msgid "settings.password"
 msgstr "Passwort"
@@ -2197,6 +2231,18 @@ msgstr "Passwort wiederholen"
 
 msgid "settings.password.success"
 msgstr "Passwort wurde erfolgreich geändert."
+
+msgid "settings.organization"
+msgstr "Organisation"
+
+msgid "settings.organization.info"
+msgstr "Hier kannst Du Deine Organisation ändern."
+
+msgid "settings.organization.success"
+msgstr "Organisation wurde erfolgreich geändert."
+
+msgid "settings.organization.no_organization"
+msgstr "Keine Organisation"
 
 msgid "settings.theme"
 msgstr "Theme"
@@ -2238,7 +2284,7 @@ msgid "faq.faq"
 msgstr "FAQ"
 
 msgid "faq.questions_link"
-msgstr "Wenn deine Frage hier nicht beantwortet wurde, <a href=\"%s\">frag den Himmel</a>."
+msgstr "Wenn deine Frage hier nicht beantwortet wurde, <a href=\"%s\">frag den Support</a>."
 
 msgid "faq.edit"
 msgstr "FAQ Eintrag bearbeiten"
@@ -2301,7 +2347,7 @@ msgid "message.title"
 msgstr "Nachrichten"
 
 msgid "message.choose_angel"
-msgstr "Wähle einen Engel"
+msgstr "Wähle einen Helfer"
 
 msgid "message.to_conversation"
 msgstr "Zur Konversation"
@@ -2310,7 +2356,7 @@ msgid "message.message"
 msgstr "Nachricht"
 
 msgid "angel"
-msgstr "Engel"
+msgstr "Helfer"
 
 msgid "date"
 msgstr "Datum"
@@ -2337,23 +2383,23 @@ msgid "worklog.delete.info"
 msgstr "Möchtest du den Arbeitseinsatz von %s wirklich löschen?"
 
 msgid "angeltypes.angeltypes"
-msgstr "Engeltypen"
+msgstr "Aufgabenbereiche"
 
 msgid "angeltypes.about"
-msgstr "Teams-/Aufgabenbeschreibung"
+msgstr "Aufgabenbereiche & Beschreibungen"
 
 msgid "angeltypes.about.text"
-msgstr "Hier findest Du die Liste der Teams und ihrer Aufgaben. Wenn Du weitere Fragen hast, schaue in den FAQ nach."
+msgstr "Hier findest Du die Liste der Aufgabenbereiche. Wenn Du weitere Fragen hast, schaue in den FAQ nach."
 
 msgid "angeltypes.restricted.hint"
-msgstr "Dieser Engeltyp benötigt eine Einweisung bei einem Einführungstreffen. "
+msgstr "Dieser Aufgabenbereich benötigt eine Einweisung bei einem Einführungstreffen. "
 "Weitere Informationen findest du möglicherweise in der Beschreibung."
 
 msgid "angeltypes.name"
 msgstr "Name"
 
 msgid "angeltypes.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "angeltypes.email"
 msgstr "E-Mail"
@@ -2361,14 +2407,38 @@ msgstr "E-Mail"
 msgid "registration.register"
 msgstr "Registrieren"
 
+msgid "organization.organizations"
+msgstr "Organisationen"
+
+msgid "organization.name"
+msgstr "Name"
+
+msgid "organization.description"
+msgstr "Beschreibung"
+
+msgid "organization.email"
+msgstr "E-Mail"
+
+msgid "organization.phone"
+msgstr "Telefon"
+
+msgid "organization.contact"
+msgstr "Ansprechperson"
+
+msgid "organization.create.title"
+msgstr "Organisation erstellen"
+
+msgid "organization.edit.title"
+msgstr "Organisation bearbeiten"
+
 msgid "room.rooms"
-msgstr "Räume"
+msgstr "Orte"
 
 msgid "room.name"
 msgstr "Name"
 
 msgid "room.dect"
-msgstr "DECT"
+msgstr "Telefon"
 
 msgid "room.map_url"
 msgstr "Karte"
@@ -2377,13 +2447,13 @@ msgid "room.description"
 msgstr "Beschreibung"
 
 msgid "room.required_angels"
-msgstr "Benötigte Engel"
+msgstr "Benötigte Helfer"
 
 msgid "room.map_url.info"
-msgstr "Die Karte wird auf der Raum-Seite als iframe eingebettet."
+msgstr "Die Karte wird auf der Ort-Seite als iframe eingebettet."
 
 msgid "room.create.title"
-msgstr "Raum erstellen"
+msgstr "Ort erstellen"
 
 msgid "room.edit.title"
-msgstr "Raum bearbeiten"
+msgstr "Ort bearbeiten"

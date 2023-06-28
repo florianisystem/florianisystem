@@ -11,6 +11,7 @@ use Engelsystem\Http\Response;
 use Engelsystem\Http\Redirector;
 use Engelsystem\Http\Request;
 use Engelsystem\Helpers\Authenticator;
+use Engelsystem\Models\Organization;
 use Psr\Log\LoggerInterface;
 
 class SettingsController extends BaseController
@@ -150,6 +151,47 @@ class SettingsController extends BaseController
         return $this->redirect->to('/settings/password');
     }
 
+    public function organization(): Response
+    {
+        $organizations = [];
+        foreach (Organization::orderBy('name')->get() as $organization) {
+            $organizations[$organization->id] = $organization->name;
+        }
+        
+        $currentOrganization = $this->auth->user()->settings->organization_id;
+            
+        return $this->response->withView(
+            'pages/settings/organization',
+            [
+                'settings_menu'        => $this->settingsMenu(),
+                'organizations'        => $organizations,
+                'current_organization' => $currentOrganization
+            ] + $this->getNotifications()
+        );
+    }
+
+    public function saveOrganization(Request $request): Response
+    {
+        $user = $this->auth->user();
+
+        $data = $this->validate($request, ['select_organization' => 'optional|int']);
+
+        if (empty($data['select_organization'])) {
+            $selectOrganization = null;
+        } else {
+            // hier noch kontrolle ob Organisation überhaupt existiert
+
+            $selectOrganization = $data['select_organization'];
+        }
+
+        $user->settings->organization_id = $selectOrganization;
+        $user->settings->save();
+
+        $this->addNotification('settings.organization.success');
+
+        return $this->redirect->to('/settings/organization');
+    }
+
     public function theme(): Response
     {
         $themes = array_map(function ($theme) {
@@ -241,20 +283,21 @@ class SettingsController extends BaseController
     public function settingsMenu(): array
     {
         $menu = [
-            url('/settings/profile')  => 'settings.profile',
-            url('/settings/password') => 'settings.password',
+            '/settings/profile'  => 'settings.profile',
+            '/settings/password' => 'settings.password',
+            '/settings/organization' => 'settings.organization',
         ];
 
         if (count(config('locales')) > 1) {
-            $menu[url('/settings/language')] = 'settings.language';
+            $menu['/settings/language'] = 'settings.language';
         }
 
         if (count(config('themes')) > 1) {
-            $menu[url('/settings/theme')] = 'settings.theme';
+            $menu['/settings/theme'] = 'settings.theme';
         }
 
         if (!empty(config('oauth'))) {
-            $menu[url('/settings/oauth')] = ['title' => 'settings.oauth', 'hidden' => $this->checkOauthHidden()];
+            $menu['/settings/oauth'] = ['title' => 'settings.oauth', 'hidden' => $this->checkOauthHidden()];
         }
 
         return $menu;

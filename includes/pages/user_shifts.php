@@ -54,21 +54,18 @@ function user_shifts()
  */
 function update_ShiftsFilter_timerange(ShiftsFilter $shiftsFilter, $days)
 {
-    $start_time = $shiftsFilter->getStartTime();
+    $start_time = null;//$shiftsFilter->getStartTime();
     if (is_null($start_time)) {
         $now = (new DateTime())->format('Y-m-d');
-        $first_day = DateTime::createFromFormat(
-            'Y-m-d',
-            in_array($now, $days) ? $now : ($days[0] ?? (new DateTime())->format('Y-m-d'))
-        )->getTimestamp();
-        if (time() < $first_day) {
-            $start_time = $first_day;
-        } else {
+        if (in_array($now, $days) || count($days) === 0) {
             $start_time = time();
+        } else {
+            $first_day = DateTime::createFromFormat('Y-m-d H:i:s', $days[0] . ' 00:00:00')->getTimestamp();
+            $start_time = $first_day;
         }
     }
 
-    $end_time = $shiftsFilter->getEndTime();
+    $end_time = null;//$shiftsFilter->getEndTime();
     if (is_null($end_time)) {
         $end_time = $start_time + 24 * 60 * 60;
         $end = Carbon::createFromTimestamp($end_time);

@@ -34,6 +34,8 @@ $route->addGroup(
         $route->post('/profile', 'SettingsController@saveProfile');
         $route->get('/password', 'SettingsController@password');
         $route->post('/password', 'SettingsController@savePassword');
+        $route->get('/organization', 'SettingsController@organization');
+        $route->post('/organization', 'SettingsController@saveOrganization');
         $route->get('/theme', 'SettingsController@theme');
         $route->post('/theme', 'SettingsController@saveTheme');
         $route->get('/language', 'SettingsController@language');
@@ -109,6 +111,9 @@ $route->get('/ical', 'FeedController@ical');
 $route->get('/rss', 'FeedController@rss');
 $route->get('/shifts-json-export', 'FeedController@shifts');
 
+// Map
+$route->get('/map', 'MapController@index');
+
 // Design
 $route->get('/design', 'DesignController@index');
 
@@ -165,6 +170,18 @@ $route->addGroup(
                 $route->post('', 'Admin\\RoomsController@delete');
                 $route->get('/edit[/{room_id:\d+}]', 'Admin\\RoomsController@edit');
                 $route->post('/edit[/{room_id:\d+}]', 'Admin\\RoomsController@save');
+            }
+        );
+
+        // Organizations
+        $route->addGroup(
+            '/organizations',
+            function (RouteCollector $route): void {
+                $route->get('', 'Admin\\OrganizationsController@index');
+                $route->post('', 'Admin\\OrganizationsController@delete');
+                $route->get('/view[/{organization_id:\d+}]', 'Admin\\OrganizationsController@view');
+                $route->get('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@edit');
+                $route->post('/edit[/{organization_id:\d+}]', 'Admin\\OrganizationsController@save');
             }
         );
 

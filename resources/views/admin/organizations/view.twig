@@ -1,0 +1,50 @@
+{% extends 'layouts/app.twig' %}
+{% import 'macros/base.twig' as m %}
+
+{% block title %}{{ organization ? organization.name : '' }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>
+            {{ block('title') }}
+        </h1>
+
+        <div class="mb-3">
+            <div class="btn-group" role="group">
+                <a href="{{ url('admin/organizations') }}" class="btn btn-secondary back">
+                    {{ m.icon('list-task') }} {{ __('organization.organizations')}}
+                </a>
+                <a href="{{ url('admin/organizations/edit/' ~ organization.id) }}" class="btn btn-secondary" title="{{ __('form.edit') }}">
+                    {{ m.icon('pencil') }} {{ __('edit') }}
+                </a>
+            </div>
+        </div>
+
+        {% include 'layouts/parts/messages.twig' %}
+
+        <div>
+        <ul class="nav nav-tabs mb-3" role="tablist">
+            <li role="presentation" class="nav-item">
+                <a href="#{{ __('Info') }}" class="nav-link active" role="tab" id="{{ __('Info') }}-tab" aria-controls="{{ __('Info') }}" data-bs-target="#{{ __('Info') }}" data-bs-toggle="tab" aria-selected="true">
+                    {{ __('Info') }}
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active show" id="Info" aria-labelledby="Info-tab">
+                <h3>Kontakt</h3>
+                <dl class="row">
+                    <dt class="col-sm-2">{{ __('organization.email')}}</dt>
+                    <dd class="col-sm-10"><a href="mailto:{{ organization.email }}">{{ organization.email }}</a></dd>
+                    <dt class="col-sm-2">{{ __('organization.phone')}}</dt>
+                    <dd class="col-sm-10"><a href="tel:{{ organization.phone }}">{{ organization.phone }}</a></dd>
+                    <dt class="col-sm-2">{{ __('organization.contact')}}</dt>
+                    <dd class="col-sm-10">{{ organization.contact_person }}</dd>
+                </dl>
+                <h3>{{ __('organization.description')}}</h3>
+                <p>{{ organization.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

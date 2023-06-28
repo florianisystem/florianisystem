@@ -46,7 +46,7 @@ msgstr ""
 msgid "credits.contributors"
 msgstr ""
 "Please have a look at the "
-"[contributors list on GitHub](https://github.com/engelsystem/engelsystem/graphs/contributors)"
+"[contributors list on GitHub](https://github.com/florianisystem/florianisystem/graphs/contributors)"
 " for a complete list."
 
 msgid "form.select_placeholder"
@@ -299,6 +299,18 @@ msgstr "Password confirmation"
 msgid "settings.password.success"
 msgstr "Password was changed successfully."
 
+msgid "settings.organization"
+msgstr "Organization"
+
+msgid "settings.organization.info"
+msgstr "Here you can change your organization."
+
+msgid "settings.organization.success"
+msgstr "Organization was changed successfully."
+
+msgid "settings.organization.no_organization"
+msgstr "No organization"
+
 msgid "settings.theme"
 msgstr "Theme"
 
@@ -461,6 +473,30 @@ msgstr "E-Mail"
 
 msgid "registration.register"
 msgstr "Register"
+
+msgid "organization.organizations"
+msgstr "Organizations"
+
+msgid "organization.name"
+msgstr "Name"
+
+msgid "organization.description"
+msgstr "Description"
+
+msgid "organization.email"
+msgstr "E-Mail"
+
+msgid "organization.phone"
+msgstr "Phone"
+
+msgid "organization.contact"
+msgstr "Contact"
+
+msgid "organization.create.title"
+msgstr "Create organization"
+
+msgid "organization.edit.title"
+msgstr "Edit organization"
 
 msgid "room.rooms"
 msgstr "Rooms"

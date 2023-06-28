@@ -28,13 +28,13 @@
         {% endblock %}
 
         {% for name,url in config('footer_items') %}
-            <a href="{% if url starts with '/' %}{{ url(url) }}{% else %}{{ url }}{% endif %}">
+            {% apply enkode_emails %}<a href="{% if url starts with '/' %}{{ url(url) }}{% else %}{{ url }}{% endif %}">
                 {% if '@' in url %}{{ m.icon('envelope') }}{% endif %}
                 {{ __(name) }}
-            </a> ·
+            </a>{% endapply %} ·
         {% endfor %}
-        <a href="https://github.com/engelsystem/engelsystem/issues">{{ __('Bugs / Features') }}</a>
-        · <a href="https://github.com/engelsystem/engelsystem/">{{ __('Development Platform') }}</a>
+        <a href="https://github.com/florianisystem/florianisystem/issues">{{ __('Bugs / Features') }}</a>
+        · <a href="https://github.com/florianisystem/florianisystem/">{{ __('Development Platform') }}</a>
         · <a href="{{ url('credits') }}">{{ __('Credits') }}</a>
     </div>
 </div>

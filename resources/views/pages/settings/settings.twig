@@ -15,9 +15,9 @@
         <div class="row">
             <div class="col-md-3 settings-menu">
                 <ul class="nav nav-pills flex-column mt-3 user-settings">
-                    {% for url,title in settings_menu %}
-                        <li class="nav-item{% if title.hidden ?? false and url != request.url() %} d-none{% endif %}">
-                            <a class="nav-link {% if url == request.url() %}active{% endif %}" href="{{ url }}">
+                    {% for path,title in settings_menu %}
+                        <li class="nav-item{% if title.hidden ?? false and path != '/' ~ request.path() %} d-none{% endif %}">
+                            <a class="nav-link {% if path == '/' ~ request.path() %}active{% endif %}" href="{{ path }}">
                                 {{ __(title.title ?? title) }}
                             </a>
                         </li>

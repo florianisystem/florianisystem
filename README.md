@@ -5,7 +5,7 @@
 # Engelsystem
 Please visit [engelsystem.de](https://engelsystem.de) for a feature list.
 
-To report bugs use [engelsystem/issues](https://github.com/engelsystem/engelsystem/issues).
+To report bugs use [florianisystem/issues](https://github.com/florianisystem/florianisystem/issues).
 
 Since the Engelsystem is open source, you can help improving it.
 We really love to get pull requests containing fixes or improvements.
@@ -29,7 +29,7 @@ The Engelsystem may be installed manually or by using the provided [docker setup
  * Webserver, i.e. lighttpd, nginx, or Apache
 
 ### Download
- * Go to the [Releases](https://github.com/engelsystem/engelsystem/releases) page and download the latest stable release file.
+ * Go to the [Releases](https://github.com/florianisystem/florianisystem/releases) page and download the latest stable release file.
  * Extract the files to your webroot and continue with the directions for configurations and setup.
 
 ### Configuration and Setup

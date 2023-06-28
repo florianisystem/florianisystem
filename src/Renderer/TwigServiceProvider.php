@@ -15,6 +15,7 @@ use Engelsystem\Renderer\Twig\Extensions\Globals;
 use Engelsystem\Renderer\Twig\Extensions\Legacy;
 use Engelsystem\Renderer\Twig\Extensions\Markdown;
 use Engelsystem\Renderer\Twig\Extensions\Notification;
+use Engelsystem\Renderer\Twig\Extensions\Obfuscation;
 use Engelsystem\Renderer\Twig\Extensions\Session;
 use Engelsystem\Renderer\Twig\Extensions\Translation;
 use Engelsystem\Renderer\Twig\Extensions\Url;
@@ -40,6 +41,7 @@ class TwigServiceProvider extends ServiceProvider
         'session'        => Session::class,
         'legacy'         => Legacy::class,
         'markdown'       => Markdown::class,
+        'obfuscation'    => Obfuscation::class,
         'translation'    => Translation::class,
         'url'            => Url::class,
         'uuid'           => Uuid::class,

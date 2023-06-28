@@ -134,7 +134,7 @@ function angeltype_edit_controller()
         if ($valid) {
             $angeltype->save();
 
-            success('Angel type saved.');
+            success(__('Angel type saved.'));
             engelsystem_log(
                 'Saved angeltype: ' . $angeltype->name . ($angeltype->restricted ? ', restricted' : '')
                 . ($angeltype->no_self_signup ? ', no_self_signup' : '')

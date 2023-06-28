@@ -80,7 +80,7 @@ function AngelType_delete_view(AngelType $angeltype)
  */
 function AngelType_edit_view(AngelType $angeltype, bool $supporter_mode)
 {
-    return page_with_title(sprintf(__('Edit %s'), $angeltype->name), [
+    return page_with_title(is_null($angeltype->name) ? __('Add Angeltype') : sprintf(__('Edit %s'), $angeltype->name), [
         buttons([
             button(page_link_to('angeltypes'), icon('person-lines-fill') . __('Angeltypes'), 'back'),
         ]),

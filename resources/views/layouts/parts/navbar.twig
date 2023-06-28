@@ -26,13 +26,13 @@
 {% if is_guest() %}
     {% set navbar_expand_class = 'navbar-expand-md' %}
 {% else %}
-    {% set navbar_expand_class = 'navbar-expand-xxl' %}
+    {% set navbar_expand_class = 'navbar-expand-xl' %}
 {% endif %}
 
 <nav class="navbar fixed-top {{ navbar_expand_class }} border-bottom {{ theme['navbar_classes'] }}">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ m.angel() }}
+            <span class="icon-icon_angel"></span>
             <strong class="visible-lg-inline">{{ config('app_name')|upper }}</strong>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

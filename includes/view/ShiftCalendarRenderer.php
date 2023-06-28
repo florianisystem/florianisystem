@@ -308,7 +308,7 @@ class ShiftCalendarRenderer
     private function renderLegend()
     {
         return div('legend mt-3', [
-            badge(__('Your shift'), 'primary'),
+            badge(__('Your shift'), 'info'),
             badge(__('Help needed'), 'danger'),
             badge(__('Other angeltype needed / collides with my shifts'), 'warning'),
             badge(__('Shift is full'), 'success'),

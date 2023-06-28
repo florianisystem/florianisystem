@@ -12,7 +12,7 @@ msgstr ""
 msgid "auth.not-found"
 msgstr ""
 "Es wurde kein User gefunden oder das Passwort ist falsch. Probiere es bitte noch einmal. Wenn das Problem "
-"weiterhin besteht, melde dich im Himmel."
+"weiterhin besteht, melde dich im Support."
 
 msgid "validation.password.required"
 msgstr "Bitte gib ein Passwort an."
@@ -93,7 +93,7 @@ msgid "oauth.provider-error"
 msgstr "Login-Provider-Fehler"
 
 msgid "oauth.already-connected"
-msgstr "Dieser Account wurde bereits mit einem anderen Engelsystem-User verbunden!"
+msgstr "Dieser Account wurde bereits mit einem anderen Florianisystem-User verbunden!"
 
 msgid "oauth.connected"
 msgstr "Login-Provider verbunden!"
@@ -216,11 +216,28 @@ msgstr "Arbeitseinsatz erfolgreich bearbeitet."
 msgid "worklog.delete.success"
 msgstr "Arbeitseinsatz erfolgreich gelöscht."
 
+msgid "organization.edit.success"
+msgstr "Organisation erfolgreich bearbeitet."
+
+msgid "organization.delete.success"
+msgstr "Organisation erfolgreich gelöscht."
+
 msgid "room.edit.success"
-msgstr "Raum erfolgreich bearbeitet."
+msgstr "Ort erfolgreich bearbeitet."
 
 msgid "room.delete.success"
-msgstr "Raum erfolgreich gelöscht."
+msgstr "Ort erfolgreich gelöscht."
 
 msgid "validation.name.exists"
 msgstr "Der Name wird bereits verwendet."
+
+msgid "validation.map_url.optional"
+msgstr "Url darf maximal 2000 Zeichen lang sein"
+
+msgid "registration.gdpr"
+msgstr "Ich bin damit einverstanden, dass meine angegebenen Daten im ausgewählten Umfang zum Zwecke der Bearbeitung meiner Anmeldung verarbeitet und gespeichert werden."
+"<br/>Der angegebene Vor- und Nachname ist für alle Helfer auf der Plattform einsehbar."
+"<br/>Die personenbezogenen Daten werden spätestens 6 Monate nach der Veranstaltung gelöscht."
+
+msgid "registration.gdpr.required"
+msgstr "Die Zustimmung zur Datennutzung ist erforderlich."

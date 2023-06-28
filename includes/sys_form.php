@@ -90,7 +90,7 @@ function form_datetime(string $name, string $label, $value)
         <input class="form-control" id="%s" type="datetime-local"
             pattern="[0-9]{4}-[0-9]{2}-[0-9]{2} ([01][0-9]|2[0-3]):[0-5][0-9]" placeholder="YYYY-MM-DD HH:MM"
             name="%s" value="%s" autocomplete="off">
-    ', $dom_id, $name, htmlspecialchars($value ? $value->format('Y-m-d H:i') : '')), $dom_id);
+    ', $dom_id, $name, htmlspecialchars($value ? $value->format('Y-m-d H:i') : '')));
 }
 
 /**
@@ -105,9 +105,32 @@ function form_datetime(string $name, string $label, $value)
 function form_checkboxes($name, $label, $items, $selected)
 {
     $html = form_element($label, '');
+
+    $groups = [];
     foreach ($items as $key => $item) {
-        $html .= form_checkbox($name . '_' . $key, $item, in_array($key, $selected));
+        [$group, $itemName] = str_contains($item, ' - ') ? explode(' - ', $item) : ['Sonstiges', $item];
+        $groups[$group][] = form_checkbox($name . '_' . $key, $itemName, in_array($key, $selected));
     }
+    $html .= '<div class="accordion" id="accordion_' . $name . '">';
+    foreach ($groups as $group => $entries) {
+        $groupId = str_replace(' ', '_', trim($group));
+        $html .= '
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $groupId . '" aria-expanded="true" aria-controls="collapse_' . $group . '">
+                        ' . $group . '
+                    </button>
+                </h2>
+                <div id="collapse_' . $groupId . '" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        ' . join('', $entries) . '
+                    </div>
+                </div>
+            </div>
+        ';
+    }
+    $html .= '</div>';
+
     return $html;
 }
 

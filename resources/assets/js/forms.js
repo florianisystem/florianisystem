@@ -247,6 +247,7 @@ ready(() => {
       itemSelectText: '',
       // do not use Number.MAX_SAFE_INTEGER here, because otherwise the script gets stuck
       searchResultLimit: 9999,
+      shouldSort: false,
     });
   });
 });

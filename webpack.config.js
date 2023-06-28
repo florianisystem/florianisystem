@@ -41,6 +41,7 @@ const themeEntries = fs
     entries[path.parse(themeFileName).name] = `${themePath}/${themeFileName}`;
     return entries;
   }, {});
+const jsPath = path.resolve('resources/assets/js');
 
 module.exports = {
   mode: __DEV__ ? 'development' : 'production',
@@ -50,7 +51,9 @@ module.exports = {
   },
   entry: {
     ...themeEntries,
-    vendor: './resources/assets/js/vendor.js',
+    vendor: `${jsPath}/vendor.js`,
+    map: `${jsPath}/map.js`,
+    map_style: `${themePath}/map.scss`,
   },
   output: {
     path: path.resolve('public/assets'),

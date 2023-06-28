@@ -65,7 +65,7 @@ class UserWorkLogController extends BaseController
 
         $data = $this->validate($request, [
             'work_date'  => 'required|date:Y-m-d',
-            'work_hours' => 'float|min:0',
+            'work_hours' => 'float',
             'comment'    => 'required|max:200',
         ]);
 

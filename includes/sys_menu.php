@@ -37,6 +37,7 @@ function header_render_hints()
         $hints_renderer->addHint(render_user_arrived_hint(), true);
         $hints_renderer->addHint(render_user_tshirt_hint(), true);
         $hints_renderer->addHint(render_user_dect_hint(), true);
+        $hints_renderer->addHint(render_user_organization_hint(), true);
 
         return $hints_renderer->render();
     }
@@ -63,10 +64,10 @@ function make_navigation()
     $menu = [];
     $pages = [
         'news'           => __('News'),
-        'meetings'       => [__('Meetings'), 'user_meetings'],
+        // 'meetings'       => [__('Meetings'), 'user_meetings'],
         'user_shifts'    => __('Shifts'),
         'angeltypes'     => __('Angeltypes'),
-        'questions'      => [__('Ask the Heaven'), 'question.add'],
+        // 'questions'      => [__('Ask the Heaven'), 'question.add'],
     ];
 
     foreach ($pages as $menu_page => $options) {
@@ -82,20 +83,21 @@ function make_navigation()
 
     $admin_menu = [];
     $admin_pages = [
-        // path              => name
-        // path              => [name, permission]
-        'admin_arrive'       => 'Arrive angels',
-        'admin_active'       => 'Active angels',
-        'users'              => ['All Angels', 'admin_user'],
-        'admin_free'         => 'Free angels',
-        'admin/questions'    => ['Answer questions', 'question.edit'],
-        'shifttypes'         => 'Shifttypes',
-        'admin_shifts'       => 'Create shifts',
-        'admin/rooms'        => ['room.rooms', 'admin_rooms'],
-        'admin_groups'       => 'Grouprights',
-        'admin/schedule'     => ['schedule.import', 'schedule.import'],
-        'admin/logs'         => ['log.log', 'admin_log'],
-        'admin_event_config' => 'Event config',
+        // path                 => name
+        // path                 => [name, permission]
+        'admin_arrive'          => 'Arrive angels',
+        'admin_active'          => 'Active angels',
+        'users'                 => ['All Angels', 'admin_user'],
+        'admin_free'            => 'Free angels',
+        'admin/questions'       => ['Answer questions', 'question.edit'],
+        'shifttypes'            => 'Shifttypes',
+        'admin_shifts'          => 'Create shifts',
+        'admin/rooms'           => ['room.rooms', 'admin_rooms'],
+        'admin/organizations'   => ['organization.organizations', 'admin_organizations'],
+        'admin_groups'          => 'Grouprights',
+        // 'admin/schedule'     => ['schedule.import', 'schedule.import'],
+        'admin/logs'            => ['log.log', 'admin_log'],
+        'admin_event_config'    => 'Event config',
     ];
 
     if (config('autoarrive')) {
