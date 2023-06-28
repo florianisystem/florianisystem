@@ -11,8 +11,10 @@
         <div class="row">
             <div class="col-md-12">
                 {{ m.info(__('settings.organization.info')) }}
-                {{ f.select('select_organization', organizations, __('settings.organization'), current_organization, 
-                        { 'default_option': __('settings.organization.no_organization') }) }}
+                {{ f.select('select_organization', __('settings.organization'), organizations, {
+                    'selected': current_organization,
+                    'default_option': __('settings.organization.no_organization')
+                }) }}
                 {{ f.submit(__('form.save')) }}
             </div>
         </div>
